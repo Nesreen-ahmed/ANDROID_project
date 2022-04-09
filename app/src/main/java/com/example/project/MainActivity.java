@@ -572,7 +572,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void show()
     {
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        builder.setMessage("Your Semester is : "+gpa+"\n\nYour Comutative is : "+df.format(total)).setTitle(type).setPositiveButton("OK", null);
+        builder.setMessage("Your Semester is : "+df.format(gpa)+"\n\nYour Comutative is : "+df.format(total)).setTitle(type).setPositiveButton("OK", null);
         AlertDialog dialog=builder.create();
         dialog.getWindow().getAttributes().windowAnimations=R.style.MyDialogAnimation;
         dialog.show();
