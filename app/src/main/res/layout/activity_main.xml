@@ -16,7 +16,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="116dp"
+            android:layout_height="90dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -52,17 +52,17 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="61dp"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
-            <Button
+            <androidx.constraintlayout.utils.widget.MotionButton
                 android:id="@+id/complain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/color"
                 android:text="الشكاوي و الاقتراحات" />
 
-            <Button
+            <androidx.constraintlayout.utils.widget.MotionButton
                 android:id="@+id/adver"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
                 android:background="@drawable/color"
                 android:text="الاعلانات" />
 
-            <Button
+            <androidx.constraintlayout.utils.widget.MotionButton
                 android:id="@+id/events"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
                 android:background="@drawable/color"
                 android:text="الاحداث" />
 
-            <Button
+            <androidx.constraintlayout.utils.widget.MotionButton
                 android:id="@+id/news"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -93,11 +93,11 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:orientation="horizontal">
 
-            <Button
+            <androidx.constraintlayout.utils.widget.MotionButton
                 android:id="@+id/gpa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -108,9 +108,10 @@
                 android:height="60dp"
                 android:background="@drawable/color"
                 android:text="Gpa"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:onClick="gpa"/>
 
-            <Button
+            <androidx.constraintlayout.utils.widget.MotionButton
                 android:id="@+id/facebook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -121,27 +122,27 @@
                 android:height="60dp"
                 android:background="@drawable/color"
                 android:text="facebook"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"/>
 
 
-            <Button
+            <androidx.constraintlayout.utils.widget.MotionButton
                 android:id="@+id/b"
                 android:layout_width="165dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginRight="2dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
                 android:width="50dp"
                 android:height="60dp"
-                android:layout_marginRight="2dp"
                 android:background="@drawable/color"
                 android:text="لافتات سريعة للاطلاب"
                 android:textAllCaps="false" />
         </LinearLayout>
 
         <WebView
+            android:id="@+id/webviwe"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/webviwe"/>
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 

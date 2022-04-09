@@ -2,6 +2,8 @@ package com.example.project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;
@@ -23,5 +25,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         v= findViewById(R.id.webviwe);
+    }
+    public void gpa(View view) {
+        Fragment f = new froggpa();
+        FragmentManager fm = getFragmentManager();
+        fm.beginTransaction().replace(R.id.webviwe,f).commit();
     }
 }
