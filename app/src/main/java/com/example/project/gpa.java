@@ -564,12 +564,10 @@ public class gpa extends Activity implements View.OnClickListener{
     public void show()
     {
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        builder.setMessage("Your Semester is : "+gpa+"\n\nYour Comutative is : "+df.format(total)).setTitle(type).setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
-            }
-        }).show();
+        builder.setMessage("Your Semester is : "+gpa+"\n\nYour Comutative is : "+df.format(total)).setTitle(type).setPositiveButton("OK", null);
+        AlertDialog dialog=builder.create();
+        dialog.getWindow().getAttributes().windowAnimations=R.style.MyDialogAnimation;
+        dialog.show();
     }
 
 }
