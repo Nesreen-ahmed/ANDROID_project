@@ -258,23 +258,24 @@
                         android:id="@+id/b1"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="65dp"
+                        android:layout_marginRight="40dp"
+                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:width="60dp"
                         android:height="60dp"
                         android:background="@drawable/color"
                         android:text="GR"
-                        android:paddingLeft="50dp"
                         android:popupBackground="@drawable/scolor"/>
 
                     <Spinner
                         android:id="@+id/b2"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="50dp"
+                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:width="50dp"
@@ -282,7 +283,6 @@
                         android:background="@drawable/color"
                         android:text="3"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"
                         android:popupBackground="@drawable/scolor"/>
 
 
@@ -306,8 +306,9 @@
                         android:id="@+id/b4"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="65dp"
+                        android:layout_marginRight="40dp"
+                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:width="50dp"
@@ -315,15 +316,15 @@
                         android:background="@drawable/color"
                         android:text="GR"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"
                         android:popupBackground="@drawable/scolor"/>
 
                     <Spinner
                         android:id="@+id/b5"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="50dp"
+                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:width="50dp"
@@ -331,7 +332,6 @@
                         android:background="@drawable/color"
                         android:text="3"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"
                         android:popupBackground="@drawable/scolor"/>
 
 
@@ -355,8 +355,9 @@
                         android:id="@+id/b7"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="65dp"
+                        android:layout_marginRight="40dp"
+                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:width="50dp"
@@ -364,15 +365,15 @@
                         android:background="@drawable/color"
                         android:text="GR"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"
                         android:popupBackground="@drawable/scolor" />
 
                     <Spinner
                         android:id="@+id/b8"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="50dp"
+                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:width="50dp"
@@ -380,7 +381,6 @@
                         android:background="@drawable/color"
                         android:text="3"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"
                         android:popupBackground="@drawable/scolor" />
 
 
@@ -404,8 +404,9 @@
                         android:id="@+id/b10"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="65dp"
+                        android:layout_marginRight="40dp"
+                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:width="50dp"
@@ -413,15 +414,15 @@
                         android:background="@drawable/color"
                         android:text="GR"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"
                         android:popupBackground="@drawable/scolor"/>
 
                     <Spinner
                         android:id="@+id/b11"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="50dp"
+                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:width="50dp"
@@ -429,7 +430,6 @@
                         android:background="@drawable/color"
                         android:text="3"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"
                         android:popupBackground="@drawable/scolor"/>
 
 
@@ -453,8 +453,9 @@
                         android:id="@+id/b13"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="65dp"
+                        android:layout_marginRight="40dp"
+                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:width="50dp"
@@ -462,15 +463,15 @@
                         android:background="@drawable/color"
                         android:text="GR"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"
                         android:popupBackground="@drawable/scolor"/>
 
                     <Spinner
                         android:id="@+id/b14"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="50dp"
+                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:width="50dp"
@@ -478,7 +479,6 @@
                         android:background="@drawable/color"
                         android:text="3"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"
                         android:popupBackground="@drawable/scolor"/>
 
 
@@ -502,8 +502,9 @@
                         android:id="@+id/b16"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="65dp"
+                        android:layout_marginRight="40dp"
+                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:width="50dp"
@@ -511,15 +512,15 @@
                         android:background="@drawable/color"
                         android:text="GR"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"
                         android:popupBackground="@drawable/scolor"/>
 
                     <Spinner
                         android:id="@+id/b17"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="50dp"
+                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:width="50dp"
@@ -527,7 +528,6 @@
                         android:background="@drawable/color"
                         android:text="3"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"
                         android:popupBackground="@drawable/scolor"/>
 
 
@@ -551,8 +551,9 @@
                         android:id="@+id/b19"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="65dp"
+                        android:layout_marginRight="40dp"
+                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:width="50dp"
@@ -560,15 +561,15 @@
                         android:background="@drawable/color"
                         android:text="GR"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"
                         android:popupBackground="@drawable/scolor"/>
 
                     <Spinner
                         android:id="@+id/b20"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="50dp"
+                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:width="50dp"
@@ -576,7 +577,6 @@
                         android:background="@drawable/color"
                         android:text="3"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"
                         android:popupBackground="@drawable/scolor"/>
 
 
@@ -600,8 +600,9 @@
                         android:id="@+id/b22"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="65dp"
+                        android:layout_marginRight="40dp"
+                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:width="50dp"
@@ -609,15 +610,15 @@
                         android:background="@drawable/color"
                         android:text="GR"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"
                         android:popupBackground="@drawable/scolor"/>
 
                     <Spinner
                         android:id="@+id/b23"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="50dp"
+                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:width="50dp"
@@ -625,7 +626,6 @@
                         android:background="@drawable/color"
                         android:text="3"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"
                         android:popupBackground="@drawable/scolor"/>
 
 
@@ -649,8 +649,9 @@
                         android:id="@+id/b25"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="65dp"
+                        android:layout_marginRight="40dp"
+                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:width="50dp"
@@ -658,15 +659,15 @@
                         android:background="@drawable/color"
                         android:text="GR"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"
                         android:popupBackground="@drawable/scolor"/>
 
                     <Spinner
                         android:id="@+id/b26"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="50dp"
+                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:width="50dp"
@@ -674,7 +675,6 @@
                         android:background="@drawable/color"
                         android:text="3"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"
                         android:popupBackground="@drawable/scolor"/>
 
 
@@ -699,8 +699,9 @@
                         android:id="@+id/b28"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="65dp"
+                        android:layout_marginRight="40dp"
+                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:width="50dp"
@@ -708,15 +709,15 @@
                         android:background="@drawable/color"
                         android:text="GR"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"
                         android:popupBackground="@drawable/scolor" />
 
                     <Spinner
                         android:id="@+id/b29"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="50dp"
+                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:width="50dp"
@@ -724,7 +725,6 @@
                         android:background="@drawable/color"
                         android:text="3"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"
                         android:popupBackground="@drawable/scolor"/>
 
 
