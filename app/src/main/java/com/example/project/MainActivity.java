@@ -22,13 +22,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
     ScrollView show;
     EditText prevhours,prevgpas;
     Button b;
-    Float total;
-    double gpa,y=0;
-    String type;
+    float total=0;
+    double gpa=0,y=0;
     double grades[]=new double[10];
     int hours[]=new int[10],x=0;
     int tHours;
-    final DecimalFormat df = new DecimalFormat("0.00");
+    final DecimalFormat df = new DecimalFormat("0.0000");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -280,8 +279,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         });
     }
 
-    private void grades()
-    {
+    private void grades() {
         Spinner grade1=findViewById(R.id.b1);
         Spinner grade2=findViewById(R.id.b4);
         Spinner grade3=findViewById(R.id.b7);
@@ -545,7 +543,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         if(view.getId()==b.getId())
         {
             calck();
-            show();
         }
     }
 
@@ -555,27 +552,152 @@ public class MainActivity extends Activity implements View.OnClickListener {
             gpa+=grades[i]*hours[i];
             tHours+=hours[i];
         }
-        gpa=gpa/tHours;
-        total= (float) ((gpa*tHours+x*y)/(tHours+x));
+        if(gpa!=0&&tHours!=0)
+            gpa=gpa/tHours;
+        else if(gpa==0&&tHours==0){gpa=0;total=(float)y;}
+        if(gpa!=0&&tHours!=0&&x!=0&&y!=0)
+            total= (float) ((gpa*tHours+x*y)/(tHours+x));
         if(total>=3.67)
-            type="Excellent";
+            showExcellent();
         else if(total>=3)
-            type="Very Good";
+            showVery_Good();
         else if(total>=2.33)
-            type="Good";
+            showGood();
         else if(total>=2)
-            type="Moderate";
+            showModerate();
         else
-            type="Fail";
+            showFail();
     }
 
-    public void show()
-    {
+    public void showExcellent() {
+
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        builder.setMessage("Your Semester is : "+df.format(gpa)+"\n\nYour Comutative is : "+df.format(total)).setTitle(type).setPositiveButton("OK", null);
+        builder.setView(R.layout.excellent);
         AlertDialog dialog=builder.create();
         dialog.getWindow().getAttributes().windowAnimations=R.style.MyDialogAnimation;
         dialog.show();
+        ImageView im=dialog.findViewById(R.id.close);
+        Button b=dialog.findViewById(R.id.ok);
+        TextView tv1=dialog.findViewById(R.id.tv1);
+        tv1.setText("Your Semester is : "+gpa);
+        TextView tv2=dialog.findViewById(R.id.tv2);
+        tv2.setText("Your Comutative is : "+df.format(total));
+        im.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+    }
+    public void showVery_Good() {
+
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setView(R.layout.very_good);
+        AlertDialog dialog=builder.create();
+        dialog.getWindow().getAttributes().windowAnimations=R.style.MyDialogAnimation;
+        dialog.show();
+        ImageView im=dialog.findViewById(R.id.close);
+        Button b=dialog.findViewById(R.id.ok);
+        TextView tv1=dialog.findViewById(R.id.tv1);
+        tv1.setText("Your Semester is : "+gpa);
+        TextView tv2=dialog.findViewById(R.id.tv2);
+        tv2.setText("Your Comutative is : "+df.format(total));
+        im.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+    }
+    public void showGood() {
+
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setView(R.layout.good);
+        AlertDialog dialog=builder.create();
+        dialog.getWindow().getAttributes().windowAnimations=R.style.MyDialogAnimation;
+        dialog.show();
+        ImageView im=dialog.findViewById(R.id.close);
+        Button b=dialog.findViewById(R.id.ok);
+        TextView tv1=dialog.findViewById(R.id.tv1);
+        tv1.setText("Your Semester is : "+gpa);
+        TextView tv2=dialog.findViewById(R.id.tv2);
+        tv2.setText("Your Comutative is : "+df.format(total));
+        im.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+    }
+    public void showModerate() {
+
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setView(R.layout.moderate);
+        AlertDialog dialog=builder.create();
+        dialog.getWindow().getAttributes().windowAnimations=R.style.MyDialogAnimation;
+        dialog.show();
+        ImageView im=dialog.findViewById(R.id.close);
+        Button b=dialog.findViewById(R.id.ok);
+        TextView tv1=dialog.findViewById(R.id.tv1);
+        tv1.setText("Your Semester is : "+gpa);
+        TextView tv2=dialog.findViewById(R.id.tv2);
+        tv2.setText("Your Comutative is : "+df.format(total));
+        im.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+    }
+    public void showFail() {
+
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setView(R.layout.fail);
+        AlertDialog dialog=builder.create();
+        dialog.getWindow().getAttributes().windowAnimations=R.style.MyDialogAnimation;
+        dialog.show();
+        ImageView im=dialog.findViewById(R.id.close);
+        Button b=dialog.findViewById(R.id.ok);
+        TextView tv1=dialog.findViewById(R.id.tv1);
+        tv1.setText("Your Semester is : "+gpa);
+        TextView tv2=dialog.findViewById(R.id.tv2);
+        tv2.setText("Your Comutative is : "+df.format(total));
+        im.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
     }
 
 }
