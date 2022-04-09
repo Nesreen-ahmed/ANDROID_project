@@ -266,7 +266,8 @@
                         android:height="60dp"
                         android:background="@drawable/color"
                         android:text="GR"
-                        android:paddingLeft="50dp"/>
+                        android:paddingLeft="50dp"
+                        android:popupBackground="@drawable/scolor"/>
 
                     <Spinner
                         android:id="@+id/b2"
@@ -281,7 +282,8 @@
                         android:background="@drawable/color"
                         android:text="3"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"/>
+                        android:paddingLeft="50dp"
+                        android:popupBackground="@drawable/scolor"/>
 
 
                 </LinearLayout>
@@ -313,7 +315,8 @@
                         android:background="@drawable/color"
                         android:text="GR"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp" />
+                        android:paddingLeft="50dp"
+                        android:popupBackground="@drawable/scolor"/>
 
                     <Spinner
                         android:id="@+id/b5"
@@ -328,7 +331,8 @@
                         android:background="@drawable/color"
                         android:text="3"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"/>
+                        android:paddingLeft="50dp"
+                        android:popupBackground="@drawable/scolor"/>
 
 
                 </LinearLayout>
@@ -360,7 +364,8 @@
                         android:background="@drawable/color"
                         android:text="GR"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"  />
+                        android:paddingLeft="50dp"
+                        android:popupBackground="@drawable/scolor" />
 
                     <Spinner
                         android:id="@+id/b8"
@@ -375,7 +380,8 @@
                         android:background="@drawable/color"
                         android:text="3"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp" />
+                        android:paddingLeft="50dp"
+                        android:popupBackground="@drawable/scolor" />
 
 
                 </LinearLayout>
@@ -407,7 +413,8 @@
                         android:background="@drawable/color"
                         android:text="GR"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"/>
+                        android:paddingLeft="50dp"
+                        android:popupBackground="@drawable/scolor"/>
 
                     <Spinner
                         android:id="@+id/b11"
@@ -422,7 +429,8 @@
                         android:background="@drawable/color"
                         android:text="3"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"/>
+                        android:paddingLeft="50dp"
+                        android:popupBackground="@drawable/scolor"/>
 
 
                 </LinearLayout>
@@ -454,7 +462,8 @@
                         android:background="@drawable/color"
                         android:text="GR"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"/>
+                        android:paddingLeft="50dp"
+                        android:popupBackground="@drawable/scolor"/>
 
                     <Spinner
                         android:id="@+id/b14"
@@ -469,7 +478,8 @@
                         android:background="@drawable/color"
                         android:text="3"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"/>
+                        android:paddingLeft="50dp"
+                        android:popupBackground="@drawable/scolor"/>
 
 
                 </LinearLayout>
@@ -501,7 +511,8 @@
                         android:background="@drawable/color"
                         android:text="GR"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp" />
+                        android:paddingLeft="50dp"
+                        android:popupBackground="@drawable/scolor"/>
 
                     <Spinner
                         android:id="@+id/b17"
@@ -516,7 +527,8 @@
                         android:background="@drawable/color"
                         android:text="3"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"/>
+                        android:paddingLeft="50dp"
+                        android:popupBackground="@drawable/scolor"/>
 
 
                 </LinearLayout>
@@ -548,7 +560,8 @@
                         android:background="@drawable/color"
                         android:text="GR"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"/>
+                        android:paddingLeft="50dp"
+                        android:popupBackground="@drawable/scolor"/>
 
                     <Spinner
                         android:id="@+id/b20"
@@ -563,7 +576,8 @@
                         android:background="@drawable/color"
                         android:text="3"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp" />
+                        android:paddingLeft="50dp"
+                        android:popupBackground="@drawable/scolor"/>
 
 
                 </LinearLayout>
@@ -595,7 +609,8 @@
                         android:background="@drawable/color"
                         android:text="GR"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"/>
+                        android:paddingLeft="50dp"
+                        android:popupBackground="@drawable/scolor"/>
 
                     <Spinner
                         android:id="@+id/b23"
@@ -610,7 +625,8 @@
                         android:background="@drawable/color"
                         android:text="3"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"/>
+                        android:paddingLeft="50dp"
+                        android:popupBackground="@drawable/scolor"/>
 
 
                 </LinearLayout>
@@ -642,7 +658,8 @@
                         android:background="@drawable/color"
                         android:text="GR"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"/>
+                        android:paddingLeft="50dp"
+                        android:popupBackground="@drawable/scolor"/>
 
                     <Spinner
                         android:id="@+id/b26"
@@ -657,7 +674,8 @@
                         android:background="@drawable/color"
                         android:text="3"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp"/>
+                        android:paddingLeft="50dp"
+                        android:popupBackground="@drawable/scolor"/>
 
 
 
@@ -690,7 +708,8 @@
                         android:background="@drawable/color"
                         android:text="GR"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp" />
+                        android:paddingLeft="50dp"
+                        android:popupBackground="@drawable/scolor" />
 
                     <Spinner
                         android:id="@+id/b29"
@@ -705,7 +724,8 @@
                         android:background="@drawable/color"
                         android:text="3"
                         android:textAllCaps="false"
-                        android:paddingLeft="50dp" />
+                        android:paddingLeft="50dp"
+                        android:popupBackground="@drawable/scolor"/>
 
 
 
