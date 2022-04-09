@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    app:layout_constraintTop_toTopOf="parent">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:backgroundTint="@color/black"
-        app:layout_constraintTop_toTopOf="parent">
+        android:background="@drawable/bgcolor2">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,7 +26,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_marginLeft="5dp"
-                app:srcCompat="@drawable/ain_shams" />
+                android:src="@drawable/ain_shams"/>
 
             <TextView
                 android:id="@+id/textView"
@@ -46,7 +47,7 @@
                 android:layout_marginRight="5dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/science" />
+                android:src="@drawable/science" />
 
         </LinearLayout>
 
@@ -95,7 +96,8 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
             <androidx.constraintlayout.utils.widget.MotionButton
                 android:id="@+id/gpa"
@@ -138,13 +140,597 @@
                 android:text="لافتات سريعة للاطلاب"
                 android:textAllCaps="false" />
         </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <WebView
             android:id="@+id/webviwe"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
+        <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            android:id="@+id/gpashow">
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bgcolor"
+                android:orientation="vertical">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="20dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@drawable/color1">
 
 
-</RelativeLayout>
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="20dp"
+                            android:gravity="center"
+                            android:text="Previous Gpa"
+                            android:textSize="20dp"/>
+
+                        <EditText
+                            android:id="@+id/prevhours"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="@string/cridit_hours"
+                            android:inputType="number"
+                            android:gravity="center"/>
+                        <EditText
+                            android:id="@+id/prevdeg"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="@string/prevgpa"
+                            android:inputType="textUri|number"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/t1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="course"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/t2"
+                        android:layout_width="98dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Grade"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/t3"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Credits"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="91dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:text="#1"
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/b1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:width="60dp"
+                        android:height="60dp"
+                        android:background="@drawable/color"
+                        android:text="GR"
+                        android:paddingLeft="50dp"/>
+
+                    <Spinner
+                        android:id="@+id/b2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:width="50dp"
+                        android:height="60dp"
+                        android:background="@drawable/color"
+                        android:text="3"
+                        android:textAllCaps="false"
+                        android:paddingLeft="50dp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="91dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:text="#2"
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/b4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:width="50dp"
+                        android:height="60dp"
+                        android:background="@drawable/color"
+                        android:text="GR"
+                        android:textAllCaps="false"
+                        android:paddingLeft="50dp" />
+
+                    <Spinner
+                        android:id="@+id/b5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:width="50dp"
+                        android:height="60dp"
+                        android:background="@drawable/color"
+                        android:text="3"
+                        android:textAllCaps="false"
+                        android:paddingLeft="50dp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="91dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:text="#3"
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/b7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:width="50dp"
+                        android:height="60dp"
+                        android:background="@drawable/color"
+                        android:text="GR"
+                        android:textAllCaps="false"
+                        android:paddingLeft="50dp"  />
+
+                    <Spinner
+                        android:id="@+id/b8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:width="50dp"
+                        android:height="60dp"
+                        android:background="@drawable/color"
+                        android:text="3"
+                        android:textAllCaps="false"
+                        android:paddingLeft="50dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="91dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:text="#4"
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/b10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:width="50dp"
+                        android:height="60dp"
+                        android:background="@drawable/color"
+                        android:text="GR"
+                        android:textAllCaps="false"
+                        android:paddingLeft="50dp"/>
+
+                    <Spinner
+                        android:id="@+id/b11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:width="50dp"
+                        android:height="60dp"
+                        android:background="@drawable/color"
+                        android:text="3"
+                        android:textAllCaps="false"
+                        android:paddingLeft="50dp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="91dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:text="#5"
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/b13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:width="50dp"
+                        android:height="60dp"
+                        android:background="@drawable/color"
+                        android:text="GR"
+                        android:textAllCaps="false"
+                        android:paddingLeft="50dp"/>
+
+                    <Spinner
+                        android:id="@+id/b14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:width="50dp"
+                        android:height="60dp"
+                        android:background="@drawable/color"
+                        android:text="3"
+                        android:textAllCaps="false"
+                        android:paddingLeft="50dp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="91dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:text="#6"
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/b16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:width="50dp"
+                        android:height="60dp"
+                        android:background="@drawable/color"
+                        android:text="GR"
+                        android:textAllCaps="false"
+                        android:paddingLeft="50dp" />
+
+                    <Spinner
+                        android:id="@+id/b17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:width="50dp"
+                        android:height="60dp"
+                        android:background="@drawable/color"
+                        android:text="3"
+                        android:textAllCaps="false"
+                        android:paddingLeft="50dp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="91dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:text="#7"
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/b19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:width="50dp"
+                        android:height="60dp"
+                        android:background="@drawable/color"
+                        android:text="GR"
+                        android:textAllCaps="false"
+                        android:paddingLeft="50dp"/>
+
+                    <Spinner
+                        android:id="@+id/b20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:width="50dp"
+                        android:height="60dp"
+                        android:background="@drawable/color"
+                        android:text="3"
+                        android:textAllCaps="false"
+                        android:paddingLeft="50dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="91dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:text="#8"
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/b22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:width="50dp"
+                        android:height="60dp"
+                        android:background="@drawable/color"
+                        android:text="GR"
+                        android:textAllCaps="false"
+                        android:paddingLeft="50dp"/>
+
+                    <Spinner
+                        android:id="@+id/b23"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:width="50dp"
+                        android:height="60dp"
+                        android:background="@drawable/color"
+                        android:text="3"
+                        android:textAllCaps="false"
+                        android:paddingLeft="50dp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="91dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:text="#9"
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/b25"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:width="50dp"
+                        android:height="60dp"
+                        android:background="@drawable/color"
+                        android:text="GR"
+                        android:textAllCaps="false"
+                        android:paddingLeft="50dp"/>
+
+                    <Spinner
+                        android:id="@+id/b26"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:width="50dp"
+                        android:height="60dp"
+                        android:background="@drawable/color"
+                        android:text="3"
+                        android:textAllCaps="false"
+                        android:paddingLeft="50dp"/>
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="91dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:text="#10"
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/b28"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:width="50dp"
+                        android:height="60dp"
+                        android:background="@drawable/color"
+                        android:text="GR"
+                        android:textAllCaps="false"
+                        android:paddingLeft="50dp" />
+
+                    <Spinner
+                        android:id="@+id/b29"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:width="50dp"
+                        android:height="60dp"
+                        android:background="@drawable/color"
+                        android:text="3"
+                        android:textAllCaps="false"
+                        android:paddingLeft="50dp" />
+
+
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="30dp">
+
+                    <androidx.constraintlayout.utils.widget.MotionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/color"
+                        android:text="Calculate"
+                        android:id="@+id/calculate"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+
+</LinearLayout>

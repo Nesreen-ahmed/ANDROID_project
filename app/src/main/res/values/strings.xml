@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">test gpa</string>
+    <string name="app_name">test project</string>
     <string name="cridit_hours">Total Credit Hours</string>
     <string name="prevgpa">Your GPA</string>
 </resources>
