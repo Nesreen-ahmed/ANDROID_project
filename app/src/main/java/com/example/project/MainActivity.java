@@ -15,7 +15,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.*;
 
-import org.jsoup.nodes.Document;
 
 public class MainActivity extends AppCompatActivity {
     WebView v;
@@ -26,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         v= findViewById(R.id.webviwe);
     }
+
     public void gpa(View view) {
         Fragment f = new froggpa();
         FragmentManager fm = getFragmentManager();
