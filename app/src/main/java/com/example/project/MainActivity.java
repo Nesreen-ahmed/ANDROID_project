@@ -600,7 +600,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         if(gpa!=0&&tHours!=0)
             gpa=gpa/tHours;
         else if(gpa==0&&tHours==0){gpa=0;total=(float)y;}
-        if(gpa!=0&&tHours!=0&&x!=0&&y!=0)
+        if(gpa!=0&&tHours!=0)
             total= (float) ((gpa*tHours+x*y)/(tHours+x));
         if(total>=3.67)
             showExcellent();
