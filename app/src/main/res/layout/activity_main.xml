@@ -57,31 +57,40 @@
             android:orientation="horizontal">
 
             <androidx.constraintlayout.utils.widget.MotionButton
-                android:id="@+id/complain"
+                android:id="@+id/facebook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                android:width="120dp"
+                android:height="60dp"
                 android:background="@drawable/color"
-                android:text="الشكاوي و الاقتراحات" />
+                android:text="facebook"
+                android:textAllCaps="false"
+                android:onClick="changeview"
+                android:drawableRight="@drawable/facebook_icon"/>
+
 
             <androidx.constraintlayout.utils.widget.MotionButton
                 android:id="@+id/adver"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/color"
-                android:text="الاعلانات" />
+                android:text="الاعلانات"
+                android:onClick="changeview"/>
 
             <androidx.constraintlayout.utils.widget.MotionButton
                 android:id="@+id/events"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/color"
-                android:text="الاحداث" />
+                android:text="الاحداث"
+                android:onClick="changeview"/>
 
             <androidx.constraintlayout.utils.widget.MotionButton
                 android:id="@+id/news"
@@ -89,7 +98,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/color"
-                android:text="الاخبار" />
+                android:drawableLeft="@drawable/news_icon"
+                android:text="الاخبار"
+                android:onClick="changeview"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -114,21 +126,16 @@
                 android:onClick="gpa"/>
 
             <androidx.constraintlayout.utils.widget.MotionButton
-                android:id="@+id/facebook"
+                android:id="@+id/complain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_weight="1"
-                android:layout_marginRight="20dp"
-                android:width="120dp"
-                android:height="60dp"
                 android:background="@drawable/color"
-                android:text="facebook"
-                android:textAllCaps="false"/>
-
+                android:layout_marginRight="20dp"
+                android:text="الشكاوي و الاقتراحات"
+                android:onClick="changeview"/>
 
             <androidx.constraintlayout.utils.widget.MotionButton
-                android:id="@+id/b"
+                android:id="@+id/banner"
                 android:layout_width="165dp"
                 android:layout_height="50dp"
                 android:layout_marginRight="2dp"
@@ -138,7 +145,8 @@
                 android:height="60dp"
                 android:background="@drawable/color"
                 android:text="لافتات سريعة للاطلاب"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:onClick="changeview"/>
         </LinearLayout>
     </LinearLayout>
     <RelativeLayout
@@ -146,7 +154,7 @@
         android:layout_height="match_parent">
 
         <WebView
-            android:id="@+id/webviwe"
+            android:id="@+id/webview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
         <ScrollView

@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebViewClient;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -32,13 +33,57 @@ public class MainActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        v= findViewById(R.id.webviwe);
+        v= findViewById(R.id.webview);
         show=findViewById(R.id.gpashow);
     }
 
+    @Override
+    public void onBackPressed() {
+        if(show.getVisibility()==View.VISIBLE && v.canGoBack())
+        {
+            v.setVisibility(View.VISIBLE);
+            v.goBack();
+            show.setVisibility(View.GONE);
+        }
+        else if(v.canGoBack()){
+            v.goBack();
+        }
+        else
+           super.onBackPressed();
+    }
+
+    public void changeview(View view)
+    {
+        if(view.getId()==R.id.complain)
+        {
+            v.loadUrl("https://forms.office.com/r/HfejjtfynN");
+            v.setWebViewClient(new WebViewClient());
+        }
+        else if(view.getId()==R.id.events)
+        {
+            v.loadUrl("https://science.asu.edu.eg/ar/events");
+            v.setWebViewClient(new WebViewClient());
+        }
+        else if(view.getId()==R.id.news)
+        {
+            v.loadUrl("https://science.asu.edu.eg/ar/news");
+            v.setWebViewClient(new WebViewClient());
+        }
+        else if(view.getId()==R.id.facebook)
+        {
+            v.loadUrl("https://www.facebook.com/FacultyofScienceASU/");
+            v.setWebViewClient(new WebViewClient());
+        }
+        else if(view.getId()==R.id.adver)
+        {
+            v.loadUrl("https://science.asu.edu.eg/ar/announcements");
+            v.setWebViewClient(new WebViewClient());
+        }
+    }
     public void gpa(View view) {
         show.setVisibility(View.VISIBLE);
         v.setVisibility(View.INVISIBLE);
+        v.loadUrl("");
         prevhours=findViewById(R.id.prevhours);
         prevgpas=findViewById(R.id.prevdeg);
         b=findViewById(R.id.calculate);
@@ -647,6 +692,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             }
         });
     }
+
     public void showModerate() {
 
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
