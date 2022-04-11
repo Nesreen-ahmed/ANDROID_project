@@ -52,8 +52,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
            super.onBackPressed();
     }
 
-    public void changeview(View view)
-    {
+    public void changeview(View view){
         if(view.getId()==R.id.complain)
         {
             v.loadUrl("https://forms.office.com/r/HfejjtfynN");
@@ -79,18 +78,18 @@ public class MainActivity extends Activity implements View.OnClickListener {
             v.loadUrl("https://science.asu.edu.eg/ar/announcements");
             v.setWebViewClient(new WebViewClient());
         }
+        else if(view.getId()==R.id.gpa)
+        {
+            show.setVisibility(View.VISIBLE);
+            v.setVisibility(View.INVISIBLE);
+            v.loadUrl("");
+            grades();
+            hours();
+            b=findViewById(R.id.calculate);
+            b.setOnClickListener(this);
+        }
     }
-    public void gpa(View view) {
-        show.setVisibility(View.VISIBLE);
-        v.setVisibility(View.INVISIBLE);
-        v.loadUrl("");
-        prevhours=findViewById(R.id.prevhours);
-        prevgpas=findViewById(R.id.prevdeg);
-        b=findViewById(R.id.calculate);
-        b.setOnClickListener(this);
-        grades();
-        hours();
-    }
+
     private void hours() {
         Spinner hour1=findViewById(R.id.b2);
         Spinner hour2=findViewById(R.id.b5);
@@ -578,9 +577,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
             }
         });
     }
+
     @Override
     public void onClick(View view) {
-        gpa=0;tHours=0;
+        gpa=0;tHours=0;x=0;y=0;
+        prevhours=findViewById(R.id.prevhours);
+        prevgpas=findViewById(R.id.prevdeg);
         if(!prevhours.getText().toString().isEmpty())
             x=Integer.parseInt(String.valueOf(prevhours.getText()));
         if(!prevgpas.getText().toString().isEmpty())
@@ -597,11 +599,17 @@ public class MainActivity extends Activity implements View.OnClickListener {
             gpa+=grades[i]*hours[i];
             tHours+=hours[i];
         }
-        if(gpa!=0&&tHours!=0)
-            gpa=gpa/tHours;
-        else if(gpa==0&&tHours==0){gpa=0;total=(float)y;}
-        if(gpa!=0&&tHours!=0)
-            total= (float) ((gpa*tHours+x*y)/(tHours+x));
+        if(tHours==0&&x==0)
+            total=(float) 0;
+        else if(x==0) {
+            gpa = gpa / tHours;
+            total=(float) gpa;
+        }
+        else if(tHours==0){gpa=0;total=(float)y;}
+        else if(tHours!=0&&x!=0) {
+            gpa = gpa / tHours;
+            total = (float) ((gpa * tHours + x * y) / (tHours + x));
+        }
         if(total>=3.67)
             showExcellent();
         else if(total>=3)
@@ -624,7 +632,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         ImageView im=dialog.findViewById(R.id.close);
         Button b=dialog.findViewById(R.id.ok);
         TextView tv1=dialog.findViewById(R.id.tv1);
-        tv1.setText("Your Semester is : "+gpa);
+        tv1.setText("Your Semester is : "+df.format(gpa));
         TextView tv2=dialog.findViewById(R.id.tv2);
         tv2.setText("Your Comutative is : "+df.format(total));
         im.setOnClickListener(new View.OnClickListener() {
@@ -650,7 +658,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         ImageView im=dialog.findViewById(R.id.close);
         Button b=dialog.findViewById(R.id.ok);
         TextView tv1=dialog.findViewById(R.id.tv1);
-        tv1.setText("Your Semester is : "+gpa);
+        tv1.setText("Your Semester is : "+df.format(gpa));
         TextView tv2=dialog.findViewById(R.id.tv2);
         tv2.setText("Your Comutative is : "+df.format(total));
         im.setOnClickListener(new View.OnClickListener() {
@@ -676,7 +684,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         ImageView im=dialog.findViewById(R.id.close);
         Button b=dialog.findViewById(R.id.ok);
         TextView tv1=dialog.findViewById(R.id.tv1);
-        tv1.setText("Your Semester is : "+gpa);
+        tv1.setText("Your Semester is : "+df.format(gpa));
         TextView tv2=dialog.findViewById(R.id.tv2);
         tv2.setText("Your Comutative is : "+df.format(total));
         im.setOnClickListener(new View.OnClickListener() {
@@ -692,7 +700,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
             }
         });
     }
-
     public void showModerate() {
 
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
@@ -703,7 +710,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         ImageView im=dialog.findViewById(R.id.close);
         Button b=dialog.findViewById(R.id.ok);
         TextView tv1=dialog.findViewById(R.id.tv1);
-        tv1.setText("Your Semester is : "+gpa);
+        tv1.setText("Your Semester is : "+df.format(gpa));
         TextView tv2=dialog.findViewById(R.id.tv2);
         tv2.setText("Your Comutative is : "+df.format(total));
         im.setOnClickListener(new View.OnClickListener() {
@@ -729,7 +736,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         ImageView im=dialog.findViewById(R.id.close);
         Button b=dialog.findViewById(R.id.ok);
         TextView tv1=dialog.findViewById(R.id.tv1);
-        tv1.setText("Your Semester is : "+gpa);
+        tv1.setText("Your Semester is : "+df.format(gpa));
         TextView tv2=dialog.findViewById(R.id.tv2);
         tv2.setText("Your Comutative is : "+df.format(total));
         im.setOnClickListener(new View.OnClickListener() {

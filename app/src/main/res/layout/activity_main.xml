@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -54,24 +53,20 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:orientation="horizontal">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="@drawable/color"
-                android:padding="10dp">
-            <ImageView
+                android:padding="10dp"
                 android:id="@+id/facebook"
-                android:layout_width="40dp"
-                android:layout_height="20dp"
-                android:layout_marginBottom="8dp"
-                android:layout_weight="1"
-                android:layout_marginRight="5dp"
-                android:width="120dp"
-                android:height="60dp"
-                android:textAllCaps="false"
-                android:onClick="changeview"
-                android:src="@drawable/facebook_icon"/>
+                android:onClick="changeview">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/facebook_icon"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -129,7 +124,7 @@
                 android:background="@drawable/color"
                 android:text="Gpa"
                 android:textAllCaps="false"
-                android:onClick="gpa"/>
+                android:onClick="changeview"/>
 
             <androidx.constraintlayout.utils.widget.MotionButton
                 android:id="@+id/complain"
@@ -164,12 +159,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
         <ScrollView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="invisible"
+            android:visibility="gone"
             android:id="@+id/gpashow">
 
             <LinearLayout
@@ -274,14 +266,11 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="65dp"
                         android:layout_marginRight="40dp"
-                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:width="60dp"
-                        android:height="60dp"
                         android:background="@drawable/color"
-                        android:text="GR"
-                        android:popupBackground="@drawable/scolor"/>
+                        android:popupBackground="@drawable/scolor"
+                        android:textAlignment="center" />
 
                     <Spinner
                         android:id="@+id/b2"
@@ -289,15 +278,11 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="50dp"
-                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:width="50dp"
-                        android:height="60dp"
                         android:background="@drawable/color"
-                        android:text="3"
-                        android:textAllCaps="false"
-                        android:popupBackground="@drawable/scolor"/>
+                        android:popupBackground="@drawable/scolor"
+                        android:textAlignment="center" />
 
 
                 </LinearLayout>
@@ -322,14 +307,10 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="65dp"
                         android:layout_marginRight="40dp"
-                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:width="50dp"
-                        android:height="60dp"
                         android:background="@drawable/color"
-                        android:text="GR"
-                        android:textAllCaps="false"
+                        android:textAlignment="center"
                         android:popupBackground="@drawable/scolor"/>
 
                     <Spinner
@@ -338,14 +319,10 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="50dp"
-                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:width="50dp"
-                        android:height="60dp"
                         android:background="@drawable/color"
-                        android:text="3"
-                        android:textAllCaps="false"
+                        android:textAlignment="center"
                         android:popupBackground="@drawable/scolor"/>
 
 
@@ -371,15 +348,11 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="65dp"
                         android:layout_marginRight="40dp"
-                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:width="50dp"
-                        android:height="60dp"
                         android:background="@drawable/color"
-                        android:text="GR"
-                        android:textAllCaps="false"
-                        android:popupBackground="@drawable/scolor" />
+                        android:popupBackground="@drawable/scolor"
+                        android:textAlignment="center"  />
 
                     <Spinner
                         android:id="@+id/b8"
@@ -387,15 +360,11 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="50dp"
-                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:width="50dp"
-                        android:height="60dp"
                         android:background="@drawable/color"
-                        android:text="3"
-                        android:textAllCaps="false"
-                        android:popupBackground="@drawable/scolor" />
+                        android:popupBackground="@drawable/scolor"
+                        android:textAlignment="center"  />
 
 
                 </LinearLayout>
@@ -420,15 +389,11 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="65dp"
                         android:layout_marginRight="40dp"
-                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:width="50dp"
-                        android:height="60dp"
                         android:background="@drawable/color"
-                        android:text="GR"
-                        android:textAllCaps="false"
-                        android:popupBackground="@drawable/scolor"/>
+                        android:popupBackground="@drawable/scolor"
+                        android:textAlignment="center" />
 
                     <Spinner
                         android:id="@+id/b11"
@@ -436,15 +401,11 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="50dp"
-                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:width="50dp"
-                        android:height="60dp"
                         android:background="@drawable/color"
-                        android:text="3"
-                        android:textAllCaps="false"
-                        android:popupBackground="@drawable/scolor"/>
+                        android:popupBackground="@drawable/scolor"
+                        android:textAlignment="center" />
 
 
                 </LinearLayout>
@@ -469,15 +430,11 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="65dp"
                         android:layout_marginRight="40dp"
-                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:width="50dp"
-                        android:height="60dp"
                         android:background="@drawable/color"
-                        android:text="GR"
-                        android:textAllCaps="false"
-                        android:popupBackground="@drawable/scolor"/>
+                        android:popupBackground="@drawable/scolor"
+                        android:textAlignment="center" />
 
                     <Spinner
                         android:id="@+id/b14"
@@ -485,15 +442,11 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="50dp"
-                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:width="50dp"
-                        android:height="60dp"
                         android:background="@drawable/color"
-                        android:text="3"
-                        android:textAllCaps="false"
-                        android:popupBackground="@drawable/scolor"/>
+                        android:popupBackground="@drawable/scolor"
+                        android:textAlignment="center" />
 
 
                 </LinearLayout>
@@ -518,15 +471,11 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="65dp"
                         android:layout_marginRight="40dp"
-                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:width="50dp"
-                        android:height="60dp"
                         android:background="@drawable/color"
-                        android:text="GR"
-                        android:textAllCaps="false"
-                        android:popupBackground="@drawable/scolor"/>
+                        android:popupBackground="@drawable/scolor"
+                        android:textAlignment="center" />
 
                     <Spinner
                         android:id="@+id/b17"
@@ -534,15 +483,11 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="50dp"
-                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:width="50dp"
-                        android:height="60dp"
                         android:background="@drawable/color"
-                        android:text="3"
-                        android:textAllCaps="false"
-                        android:popupBackground="@drawable/scolor"/>
+                        android:popupBackground="@drawable/scolor"
+                        android:textAlignment="center" />
 
 
                 </LinearLayout>
@@ -567,15 +512,11 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="65dp"
                         android:layout_marginRight="40dp"
-                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:width="50dp"
-                        android:height="60dp"
                         android:background="@drawable/color"
-                        android:text="GR"
-                        android:textAllCaps="false"
-                        android:popupBackground="@drawable/scolor"/>
+                        android:popupBackground="@drawable/scolor"
+                        android:textAlignment="center" />
 
                     <Spinner
                         android:id="@+id/b20"
@@ -583,15 +524,11 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="50dp"
-                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:width="50dp"
-                        android:height="60dp"
                         android:background="@drawable/color"
-                        android:text="3"
-                        android:textAllCaps="false"
-                        android:popupBackground="@drawable/scolor"/>
+                        android:popupBackground="@drawable/scolor"
+                        android:textAlignment="center" />
 
 
                 </LinearLayout>
@@ -616,15 +553,11 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="65dp"
                         android:layout_marginRight="40dp"
-                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:width="50dp"
-                        android:height="60dp"
                         android:background="@drawable/color"
-                        android:text="GR"
-                        android:textAllCaps="false"
-                        android:popupBackground="@drawable/scolor"/>
+                        android:popupBackground="@drawable/scolor"
+                        android:textAlignment="center" />
 
                     <Spinner
                         android:id="@+id/b23"
@@ -632,15 +565,11 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="50dp"
-                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:width="50dp"
-                        android:height="60dp"
                         android:background="@drawable/color"
-                        android:text="3"
-                        android:textAllCaps="false"
-                        android:popupBackground="@drawable/scolor"/>
+                        android:popupBackground="@drawable/scolor"
+                        android:textAlignment="center" />
 
 
                 </LinearLayout>
@@ -665,15 +594,11 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="65dp"
                         android:layout_marginRight="40dp"
-                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:width="50dp"
-                        android:height="60dp"
                         android:background="@drawable/color"
-                        android:text="GR"
-                        android:textAllCaps="false"
-                        android:popupBackground="@drawable/scolor"/>
+                        android:popupBackground="@drawable/scolor"
+                        android:textAlignment="center" />
 
                     <Spinner
                         android:id="@+id/b26"
@@ -681,15 +606,11 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="50dp"
-                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:width="50dp"
-                        android:height="60dp"
                         android:background="@drawable/color"
-                        android:text="3"
-                        android:textAllCaps="false"
-                        android:popupBackground="@drawable/scolor"/>
+                        android:popupBackground="@drawable/scolor"
+                        android:textAlignment="center" />
 
 
 
@@ -715,15 +636,11 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="65dp"
                         android:layout_marginRight="40dp"
-                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:width="50dp"
-                        android:height="60dp"
                         android:background="@drawable/color"
-                        android:text="GR"
-                        android:textAllCaps="false"
-                        android:popupBackground="@drawable/scolor" />
+                        android:popupBackground="@drawable/scolor"
+                        android:textAlignment="center" />
 
                     <Spinner
                         android:id="@+id/b29"
@@ -731,21 +648,15 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="50dp"
-                        android:paddingLeft="15dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:width="50dp"
-                        android:height="60dp"
                         android:background="@drawable/color"
-                        android:text="3"
-                        android:textAllCaps="false"
-                        android:popupBackground="@drawable/scolor"/>
+                        android:popupBackground="@drawable/scolor"
+                        android:textAlignment="center" />
 
 
 
                 </LinearLayout>
-
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -758,7 +669,8 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/color"
                         android:text="Calculate"
-                        android:id="@+id/calculate"/>
+                        android:id="@+id/calculate"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
 
