@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Excellent"
-        android:textColor="#FFEB3B"
+        android:textColor="#56B35A"
         android:textSize="50dp"/>
 
     <ImageView
@@ -28,18 +28,18 @@
         android:layout_height="150dp"
         android:layout_gravity="center"
         android:paddingBottom="10dp"
-        android:src="@drawable/excellence" />
+        android:src="@drawable/success" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFEB3B"
+        android:textColor="#56B35A"
         android:textSize="20dp"
         android:id="@+id/tv1"
         android:paddingLeft="20dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFEB3B"
+        android:textColor="#56B35A"
         android:textSize="20dp"
         android:id="@+id/tv2"
         android:paddingLeft="20dp"/>
