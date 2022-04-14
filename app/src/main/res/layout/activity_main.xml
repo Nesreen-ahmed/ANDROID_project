@@ -58,33 +58,34 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/complain"
-                android:layout_width="130dp"
-                android:layout_height="70dp"
+                android:id="@+id/facebook"
+                android:layout_width="93dp"
+                android:layout_height="63dp"
                 android:layout_marginLeft="5dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="5dp"
                 android:layout_marginBottom="5dp"
-                android:layout_weight="1"
                 android:background="@drawable/new_color"
                 android:onClick="changeview"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:gravity="center">
 
                 <ImageView
-                    android:layout_width="50dp"
+                    android:layout_width="37dp"
                     android:layout_height="20dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
                     android:layout_marginBottom="5dp"
-                    android:src="@drawable/complain_icon" />
+                    android:src="@drawable/facebook_icon" />
 
                 <TextView
-                    android:layout_width="116dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="الشكاوي/الاقتراحات"
+                    android:text="facebook"
                     android:textColor="@color/black" />
             </LinearLayout>
+
 
             <LinearLayout
                 android:id="@+id/adver"
@@ -96,21 +97,19 @@
                 android:background="@drawable/new_color"
                 android:onClick="changeview"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:gravity="center">
 
                 <ImageView
                     android:layout_width="47dp"
                     android:layout_height="20dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginRight="5dp"
                     android:layout_marginBottom="5dp"
                     android:src="@drawable/adver_icon" />
 
                 <TextView
                     android:layout_width="59dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
                     android:gravity="center"
                     android:text="الاعلانات"
                     android:textColor="@color/black" />
@@ -126,14 +125,13 @@
                 android:background="@drawable/new_color"
                 android:onClick="changeview"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:gravity="center">
 
                 <ImageView
                     android:layout_width="35dp"
                     android:layout_height="23dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginRight="3dp"
                     android:layout_marginBottom="5dp"
                     android:src="@drawable/events_icon" />
 
@@ -155,13 +153,13 @@
                 android:background="@drawable/new_color"
                 android:onClick="changeview"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:gravity="center">
 
                 <ImageView
                     android:layout_width="35dp"
                     android:layout_height="23dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="4dp"
                     android:layout_marginBottom="5dp"
                     android:src="@drawable/news_icon" />
 
@@ -183,32 +181,32 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/facebook"
-                android:layout_width="93dp"
-                android:layout_height="63dp"
+                android:id="@+id/complain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
                 android:background="@drawable/new_color"
                 android:onClick="changeview"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:gravity="center">
 
                 <ImageView
-                    android:layout_width="37dp"
+                    android:layout_width="50dp"
                     android:layout_height="20dp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="5dp"
-                    android:src="@drawable/facebook_icon" />
+                    android:src="@drawable/complain_icon" />
 
                 <TextView
-                    android:layout_width="70dp"
+                    android:layout_width="116dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="facebook"
+                    android:text="الشكاوي/الاقتراحات"
                     android:textColor="@color/black" />
             </LinearLayout>
+
 
             <LinearLayout
                 android:id="@+id/gpa"
@@ -216,10 +214,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:background="@drawable/new_color"
-
                 android:onClick="changeview"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:gravity="center">
 
                 <ImageView
                     android:layout_width="48dp"
@@ -232,7 +230,6 @@
                 <TextView
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="13dp"
                     android:gravity="center"
                     android:text="gpa"
                     android:onClick="changeview"
@@ -242,28 +239,28 @@
 
             <LinearLayout
                 android:id="@+id/baneer"
-                android:layout_width="176dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:background="@drawable/new_color"
                 android:onClick="changeview"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:gravity="center">
 
                 <ImageView
                     android:layout_width="49dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginRight="5dp"
                     android:src="@drawable/banner_icon" />
 
                 <TextView
                     android:layout_width="129dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:text="لافتات سريعه للطلاب"
+                    android:text="لافتات سريعة للطلاب"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:gravity="center" />
             </LinearLayout>
 
         </LinearLayout>

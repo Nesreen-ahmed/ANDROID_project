@@ -24,7 +24,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     EditText prevhours,prevgpas;
     Button b;
     float total=0;
-    double gpa=0,y=0;
+    float gpa=0,y=0;
     double grades[]=new double[10];
     int hours[]=new int[10],x=0;
     int tHours;
@@ -586,7 +586,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         if(!prevhours.getText().toString().isEmpty())
             x=Integer.parseInt(String.valueOf(prevhours.getText()));
         if(!prevgpas.getText().toString().isEmpty())
-            y=Double.parseDouble(String.valueOf(prevgpas.getText()));
+            y=Float.parseFloat(String.valueOf(prevgpas.getText()));
         if(view.getId()==b.getId())
         {
             calck();
@@ -603,18 +603,18 @@ public class MainActivity extends Activity implements View.OnClickListener {
             total=(float) 0;
         else if(x==0) {
             gpa = gpa / tHours;
-            total=(float) gpa;
+            total=gpa;
         }
         else if(tHours==0){gpa=0;total=(float)y;}
         else if(tHours!=0&&x!=0) {
             gpa = gpa / tHours;
-            total = (float) ((gpa * tHours + x * y) / (tHours + x));
+            total = (gpa * tHours + x * y) / (tHours + x);
         }
         if(total>=3.67)
             showExcellent();
         else if(total>=3)
             showVery_Good();
-        else if(total>=2.33)
+        else if(total>2.3299)
             showGood();
         else if(total>=2)
             showModerate();
