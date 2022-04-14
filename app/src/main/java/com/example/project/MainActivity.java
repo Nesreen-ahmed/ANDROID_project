@@ -2,7 +2,11 @@ package com.example.project;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebViewClient;
@@ -35,6 +39,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_main);
         v= findViewById(R.id.webview);
         show=findViewById(R.id.gpashow);
+        startNOTIFICATION();
     }
 
     @Override
@@ -47,34 +52,48 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
         else if(v.canGoBack()){
             v.goBack();
+            if(v.getOriginalUrl().equals(""))
+            {
+                show.setVisibility(View.VISIBLE);
+            }
         }
         else
-           super.onBackPressed();
+            super.onBackPressed();
     }
 
     public void changeview(View view){
         if(view.getId()==R.id.complain)
         {
+            show.setVisibility(View.INVISIBLE);
+            v.setVisibility(View.VISIBLE);
             v.loadUrl("https://forms.office.com/r/HfejjtfynN");
             v.setWebViewClient(new WebViewClient());
         }
         else if(view.getId()==R.id.events)
         {
+            show.setVisibility(View.INVISIBLE);
+            v.setVisibility(View.VISIBLE);
             v.loadUrl("https://science.asu.edu.eg/ar/events");
             v.setWebViewClient(new WebViewClient());
         }
         else if(view.getId()==R.id.news)
         {
+            show.setVisibility(View.INVISIBLE);
+            v.setVisibility(View.VISIBLE);
             v.loadUrl("https://science.asu.edu.eg/ar/news");
             v.setWebViewClient(new WebViewClient());
         }
         else if(view.getId()==R.id.facebook)
         {
+            show.setVisibility(View.INVISIBLE);
+            v.setVisibility(View.VISIBLE);
             v.loadUrl("https://www.facebook.com/FacultyofScienceASU/");
             v.setWebViewClient(new WebViewClient());
         }
         else if(view.getId()==R.id.adver)
         {
+            show.setVisibility(View.INVISIBLE);
+            v.setVisibility(View.VISIBLE);
             v.loadUrl("https://science.asu.edu.eg/ar/announcements");
             v.setWebViewClient(new WebViewClient());
         }
@@ -753,4 +772,17 @@ public class MainActivity extends Activity implements View.OnClickListener {
         });
     }
 
+    public void startNOTIFICATION()
+    {
+
+        Intent intent=new Intent(this,StartNotification.class);
+        intent.setAction("com.example.notification.STARTNOTIFICATION");
+        PendingIntent pendingIntent= PendingIntent.getBroadcast(this,0,intent,PendingIntent.FLAG_MUTABLE);
+
+        AlarmManager alarmManager= (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,0,10,pendingIntent);
+
+        //finish();
+    }
 }
