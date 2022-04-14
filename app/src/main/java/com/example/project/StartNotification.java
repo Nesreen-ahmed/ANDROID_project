@@ -35,21 +35,20 @@ public class StartNotification extends BroadcastReceiver {
     }
     public void createdChannel()
     {
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O) {
-            NotificationChannel notificationChannel =
-                    new NotificationChannel(channel_id, channelName, NotificationManager.IMPORTANCE_DEFAULT);
-
+        NotificationChannel notificationChannel =
+                null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            notificationChannel = new NotificationChannel(channel_id, channelName, NotificationManager.IMPORTANCE_DEFAULT);
             notificationChannel.setDescription("مرحباً بك");
-
-            NotificationManager Mng = (NotificationManager) cxt.getSystemService(Context.NOTIFICATION_SERVICE);
-            Mng.createNotificationChannel(notificationChannel);
+            NotificationManager Mng = (NotificationManager)cxt.getSystemService(Context.NOTIFICATION_SERVICE);
+            Mng.createNotificationChannel( notificationChannel );
         }
     }
     public void createNotification(String title,String text)
     {
         createdChannel();
         Intent intent=new Intent(cxt,MainActivity.class);
-        PendingIntent pendingIntent=PendingIntent.getActivity(cxt,0,intent,PendingIntent.FLAG_ONE_SHOT);
+        PendingIntent pendingIntent=PendingIntent.getActivity(cxt,0,intent,PendingIntent.FLAG_MUTABLE);
         //intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP|Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(cxt,channel_id);
@@ -58,7 +57,7 @@ public class StartNotification extends BroadcastReceiver {
                 .setContentText(text)
                 .setSmallIcon(R.drawable.science)
                 .setContentIntent(pendingIntent).setAutoCancel(true)
-                .setPriority(NotificationCompat.PRIORITY_HIGH);
+                .setAutoCancel(true);
         ++Notification_id;
         NMC.notify(Notification_id,builder.build());
     }
