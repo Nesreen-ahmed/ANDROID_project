@@ -73,7 +73,7 @@
 
                 <ImageView
                     android:layout_width="37dp"
-                    android:layout_height="20dp"
+                    android:layout_height="23dp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="5dp"
                     android:src="@drawable/facebook_icon" />
@@ -102,7 +102,7 @@
 
                 <ImageView
                     android:layout_width="47dp"
-                    android:layout_height="20dp"
+                    android:layout_height="23dp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="5dp"
                     android:src="@drawable/adver_icon" />
@@ -194,7 +194,7 @@
 
                 <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="20dp"
+                    android:layout_height="23dp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="5dp"
                     android:src="@drawable/complain_icon" />
@@ -220,21 +220,22 @@
                 android:gravity="center">
 
                 <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:src="@drawable/gpa_icon" />
 
                 <TextView
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="gpa"
+                    android:text="GPA"
                     android:onClick="changeview"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:layout_marginTop="-5dp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -273,7 +274,7 @@
         <WebView
             android:id="@+id/webview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
