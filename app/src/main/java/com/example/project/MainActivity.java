@@ -87,7 +87,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         {
             show.setVisibility(View.INVISIBLE);
             v.setVisibility(View.VISIBLE);
-            v.loadUrl("https://www.facebook.com/FacultyofScienceASU/");
+            v.loadUrl("https://www.facebook.com/672109416181270/");
             v.setWebViewClient(new WebViewClient());
         }
         else if(view.getId()==R.id.adver)
