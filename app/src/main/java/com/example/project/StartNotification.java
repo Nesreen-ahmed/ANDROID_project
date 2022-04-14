@@ -30,37 +30,40 @@ public class StartNotification extends BroadcastReceiver {
     NotificationManagerCompat NMC;
     SharedPreferences.Editor editor;
     int Notification_id=0;
-    Intent intent;
-    PendingIntent pendingIntent;
+    Context cxt;
     // NotificationChannel show;
     @Override
     public void onReceive(Context context, Intent intent) {
+        cxt=context;
         notifications =context.getSharedPreferences("NOTIFICATIONS", Activity.MODE_PRIVATE);
         editor=notifications.edit();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            notificationChannel =
-                    new NotificationChannel (channel_id, channelName, NotificationManager.IMPORTANCE_DEFAULT);
 
-            notificationChannel.setDescription("مرحباً بك");
-
-            Mng = (NotificationManager)context.getSystemService(context.NOTIFICATION_SERVICE);
-            Mng.createNotificationChannel( notificationChannel );
-
-        }
         builder = new NotificationCompat.Builder(context,channel_id);
         NMC=NotificationManagerCompat.from(context);
-        intent=new Intent(context.getApplicationContext(),MainActivity.class);
-        pendingIntent=PendingIntent.getActivity(context.getApplicationContext(),1,intent,PendingIntent.FLAG_ONE_SHOT);
+
         CheckWebPage check=new CheckWebPage();
         check.execute();
     }
+    public void createdChannel()
+    {
+        notificationChannel =
+                new NotificationChannel (channel_id, channelName, NotificationManager.IMPORTANCE_DEFAULT);
+
+        notificationChannel.setDescription("مرحباً بك");
+
+        Mng = (NotificationManager)cxt.getSystemService(cxt.NOTIFICATION_SERVICE);
+        Mng.createNotificationChannel( notificationChannel );
+    }
     public void createNotification(String title,String text)
     {
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        createdChannel();
+        Intent intent=new Intent(cxt,MainActivity.class);
+        PendingIntent pendingIntent=PendingIntent.getActivity(cxt,0,intent,0);
+        intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP|Intent.FLAG_ACTIVITY_CLEAR_TOP);
         builder.setContentTitle(title)
                 .setContentText(text)
                 .setSmallIcon(R.drawable.science)
-                .setContentIntent(pendingIntent)
+                .setContentIntent(pendingIntent).setAutoCancel(true)
                 .setAutoCancel(true);
         ++Notification_id;
         NMC.notify(Notification_id,builder.build());
