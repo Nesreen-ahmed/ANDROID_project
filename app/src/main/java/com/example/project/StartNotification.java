@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.os.Build;
 
 
 import androidx.core.app.NotificationCompat;
@@ -34,19 +35,21 @@ public class StartNotification extends BroadcastReceiver {
     }
     public void createdChannel()
     {
-        NotificationChannel notificationChannel =
-                new NotificationChannel (channel_id, channelName, NotificationManager.IMPORTANCE_DEFAULT);
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O) {
+            NotificationChannel notificationChannel =
+                    new NotificationChannel(channel_id, channelName, NotificationManager.IMPORTANCE_DEFAULT);
 
-        notificationChannel.setDescription("مرحباً بك");
+            notificationChannel.setDescription("مرحباً بك");
 
-        NotificationManager Mng = (NotificationManager)cxt.getSystemService(Context.NOTIFICATION_SERVICE);
-        Mng.createNotificationChannel( notificationChannel );
+            NotificationManager Mng = (NotificationManager) cxt.getSystemService(Context.NOTIFICATION_SERVICE);
+            Mng.createNotificationChannel(notificationChannel);
+        }
     }
     public void createNotification(String title,String text)
     {
         createdChannel();
         Intent intent=new Intent(cxt,MainActivity.class);
-        PendingIntent pendingIntent=PendingIntent.getActivity(cxt,0,intent,0);
+        PendingIntent pendingIntent=PendingIntent.getActivity(cxt,0,intent,PendingIntent.FLAG_ONE_SHOT);
         //intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP|Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(cxt,channel_id);
@@ -55,7 +58,7 @@ public class StartNotification extends BroadcastReceiver {
                 .setContentText(text)
                 .setSmallIcon(R.drawable.science)
                 .setContentIntent(pendingIntent).setAutoCancel(true)
-                .setAutoCancel(true);
+                .setPriority(NotificationCompat.PRIORITY_HIGH);
         ++Notification_id;
         NMC.notify(Notification_id,builder.build());
     }
