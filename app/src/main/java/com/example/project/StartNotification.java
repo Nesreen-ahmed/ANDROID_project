@@ -9,7 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.os.Build;
+
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -20,38 +20,26 @@ import org.jsoup.nodes.Document;
 import java.io.IOException;
 
 public class StartNotification extends BroadcastReceiver {
-
-    SharedPreferences notifications;
     String channelName="كلية العلوم";
     String channel_id="ScienceNotification";
-    NotificationChannel notificationChannel;
-    NotificationManager Mng;
-    NotificationCompat.Builder builder;
-    NotificationManagerCompat NMC;
-    SharedPreferences.Editor editor;
     int Notification_id=0;
     Context cxt;
     // NotificationChannel show;
     @Override
     public void onReceive(Context context, Intent intent) {
         cxt=context;
-        notifications =context.getSharedPreferences("NOTIFICATIONS", Activity.MODE_PRIVATE);
-        editor=notifications.edit();
-
-        builder = new NotificationCompat.Builder(context,channel_id);
-        NMC=NotificationManagerCompat.from(context);
 
         CheckWebPage check=new CheckWebPage();
         check.execute();
     }
     public void createdChannel()
     {
-        notificationChannel =
+        NotificationChannel notificationChannel =
                 new NotificationChannel (channel_id, channelName, NotificationManager.IMPORTANCE_DEFAULT);
 
         notificationChannel.setDescription("مرحباً بك");
 
-        Mng = (NotificationManager)cxt.getSystemService(cxt.NOTIFICATION_SERVICE);
+        NotificationManager Mng = (NotificationManager)cxt.getSystemService(Context.NOTIFICATION_SERVICE);
         Mng.createNotificationChannel( notificationChannel );
     }
     public void createNotification(String title,String text)
@@ -59,7 +47,10 @@ public class StartNotification extends BroadcastReceiver {
         createdChannel();
         Intent intent=new Intent(cxt,MainActivity.class);
         PendingIntent pendingIntent=PendingIntent.getActivity(cxt,0,intent,0);
-        intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        //intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(cxt,channel_id);
+        NotificationManagerCompat NMC=NotificationManagerCompat.from(cxt);
         builder.setContentTitle(title)
                 .setContentText(text)
                 .setSmallIcon(R.drawable.science)
@@ -72,13 +63,10 @@ public class StartNotification extends BroadcastReceiver {
     {
         String news,events,adver;
         @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-        @Override
         protected Void doInBackground(Void... voids) {
-
-            Document newsdoc = null,eventsdoc=null,adverdoc=null,bannerdoc=null;
+            SharedPreferences notifications =cxt.getSharedPreferences("NOTIFICATIONS", Activity.MODE_PRIVATE);
+            SharedPreferences.Editor editor=notifications.edit();
+            Document newsdoc ,eventsdoc,adverdoc;
             try{
 
                 //=====================>news<======================
@@ -88,7 +76,7 @@ public class StartNotification extends BroadcastReceiver {
                 {
                     createNotification("الأخبار" ,newsdoc.getElementsByClass("w-full lg:w-48% shadow-md mb-3 lg:mr-3 px-3").first().getElementsByClass("col-lg-6 col-md-12").first().select("a[href]").first().text().toString());
                     editor.putString("firstnews",news);
-                    editor.commit();
+                    editor.apply();
                 }
 
                 //====================>events<=====================
@@ -99,7 +87,7 @@ public class StartNotification extends BroadcastReceiver {
                     createNotification("الأحداث" ,eventsdoc.getElementsByClass("col-lg-6 col-md-12").first().getElementsByClass("max-h-12 overflow-ellipsis overflow-hidden").first().text().toString());
                     //createNotification("الأحداث" ,newsdoc.getElementsByClass("event-title").first().select("a[href]").first().text().toString());
                     editor.putString("firstevents",events);
-                    editor.commit();
+                    editor.apply();
                 }
 
                 //====================>Adver<======================
@@ -109,7 +97,7 @@ public class StartNotification extends BroadcastReceiver {
                 {
                     createNotification("الاعلانات" ,adverdoc.getElementsByClass("col-lg-4 col-md-6 mb-3").first().select("a[href]").first().text().toString());
                     editor.putString("firstadver",adver);
-                    editor.commit();
+                    editor.apply();
                 }
 
 
