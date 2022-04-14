@@ -30,6 +30,8 @@ public class StartNotification extends BroadcastReceiver {
     NotificationManagerCompat NMC;
     SharedPreferences.Editor editor;
     int Notification_id=0;
+    Intent intent;
+    PendingIntent pendingIntent;
     // NotificationChannel show;
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -47,15 +49,19 @@ public class StartNotification extends BroadcastReceiver {
         }
         builder = new NotificationCompat.Builder(context,channel_id);
         NMC=NotificationManagerCompat.from(context);
-
+        intent=new Intent(context.getApplicationContext(),MainActivity.class);
+        pendingIntent=PendingIntent.getActivity(context.getApplicationContext(),1,intent,PendingIntent.FLAG_ONE_SHOT);
         CheckWebPage check=new CheckWebPage();
         check.execute();
     }
     public void createNotification(String title,String text)
     {
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
         builder.setContentTitle(title)
                 .setContentText(text)
-                .setSmallIcon(R.drawable.science);
+                .setSmallIcon(R.drawable.science)
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true);
         ++Notification_id;
         NMC.notify(Notification_id,builder.build());
     }
