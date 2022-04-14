@@ -8,15 +8,17 @@
     tools:context=".MainActivity"
     android:orientation="vertical"
     app:layout_constraintTop_toTopOf="parent">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@drawable/bgcolor2">
+        android:layout_height="224dp"
+        android:background="@drawable/bgcolor2"
+
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="90dp"
+            android:layout_height="81dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -33,17 +35,18 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="جامعة عين شمس كلية العلوم  "
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                android:textStyle="bold"
+                android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:paddingLeft="20dp"/>
+                android:text="جامعة عين شمس كلية العلوم  "
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/imageView5"
                 android:layout_width="200dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="7dp"
                 android:layout_weight="1"
                 android:src="@drawable/science" />
 
@@ -51,105 +54,221 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="73dp"
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/color"
-                android:padding="10dp"
-                android:id="@+id/facebook"
-                android:onClick="changeview">
+                android:id="@+id/complain"
+                android:layout_width="130dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/new_color"
+                android:onClick="changeview"
+                android:orientation="vertical"
+                android:padding="10dp">
+
                 <ImageView
-                    android:layout_width="40dp"
+                    android:layout_width="50dp"
                     android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:src="@drawable/facebook_icon"/>
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/complain_icon" />
+
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="116dp"
                     android:layout_height="wrap_content"
-                    android:text="facebook"/>
+                    android:gravity="center"
+                    android:text="الشكاوي/الاقتراحات"
+                    android:textColor="@color/black" />
             </LinearLayout>
 
-            <androidx.constraintlayout.utils.widget.MotionButton
+            <LinearLayout
                 android:id="@+id/adver"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/color"
-                android:text="الاعلانات"
-                android:onClick="changeview"/>
+                android:layout_width="86dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="4"
+                android:background="@drawable/new_color"
+                android:onClick="changeview"
+                android:orientation="vertical"
+                android:padding="10dp">
 
-            <androidx.constraintlayout.utils.widget.MotionButton
+                <ImageView
+                    android:layout_width="47dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/adver_icon" />
+
+                <TextView
+                    android:layout_width="59dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:gravity="center"
+                    android:text="الاعلانات"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/events"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/color"
-                android:text="الاحداث"
-                android:onClick="changeview"/>
+                android:background="@drawable/new_color"
+                android:onClick="changeview"
+                android:orientation="vertical"
+                android:padding="10dp">
 
-            <androidx.constraintlayout.utils.widget.MotionButton
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="23dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/events_icon" />
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="الاحداث"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/news"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/color"
-                android:drawableLeft="@drawable/news_icon"
-                android:text="الاخبار"
-                android:onClick="changeview"/>
+                android:background="@drawable/new_color"
+                android:onClick="changeview"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="23dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/news_icon" />
+
+                <TextView
+                    android:layout_width="64dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="الاخبار"
+                    android:textColor="@color/black" />
+            </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp">
+            android:layout_height="70dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-            <androidx.constraintlayout.utils.widget.MotionButton
+            <LinearLayout
+                android:id="@+id/facebook"
+                android:layout_width="93dp"
+                android:layout_height="63dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/new_color"
+                android:onClick="changeview"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="37dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/facebook_icon" />
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="facebook"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/gpa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="27dp"
-                android:layout_weight="1"
-                android:layout_marginLeft="30dp"
-                android:width="100dp"
-                android:height="60dp"
-                android:background="@drawable/color"
-                android:text="Gpa"
-                android:textAllCaps="false"
-                android:onClick="changeview"/>
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/new_color"
 
-            <androidx.constraintlayout.utils.widget.MotionButton
-                android:id="@+id/complain"
-                android:layout_width="wrap_content"
+                android:onClick="changeview"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/gpa_icon" />
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13dp"
+                    android:gravity="center"
+                    android:text="gpa"
+                    android:onClick="changeview"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/baneer"
+                android:layout_width="176dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/color"
-                android:layout_marginRight="20dp"
-                android:text="الشكاوي و الاقتراحات"
-                android:onClick="changeview"/>
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/new_color"
+                android:onClick="changeview"
+                android:orientation="vertical"
+                android:padding="10dp">
 
-            <androidx.constraintlayout.utils.widget.MotionButton
-                android:id="@+id/banner"
-                android:layout_width="165dp"
-                android:layout_height="50dp"
-                android:layout_marginRight="2dp"
-                android:layout_marginBottom="8dp"
-                android:layout_weight="1"
-                android:width="50dp"
-                android:height="60dp"
-                android:background="@drawable/color"
-                android:text="لافتات سريعة للاطلاب"
-                android:textAllCaps="false"
-                android:onClick="changeview"/>
+                <ImageView
+                    android:layout_width="49dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/banner_icon" />
+
+                <TextView
+                    android:layout_width="129dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="لافتات سريعه للطلاب"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -178,7 +297,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:gravity="center"
-                        android:background="@drawable/color1">
+                        android:background="@drawable/bgcolor">
 
 
                         <TextView
@@ -214,6 +333,7 @@
 
                     <TextView
                         android:id="@+id/t1"
+                        android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="8dp"
@@ -226,6 +346,7 @@
 
                     <TextView
                         android:id="@+id/t2"
+                        android:textColor="@color/black"
                         android:layout_width="98dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -241,6 +362,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="Credits"
+                        android:textColor="@color/black"
                         android:textSize="18sp" />
 
 
@@ -258,6 +380,7 @@
                         android:layout_weight="0.25"
                         android:gravity="center"
                         android:text="#1"
+                        android:textColor="@color/black"
                         android:textSize="20sp" />
 
                     <Spinner
@@ -268,8 +391,8 @@
                         android:layout_marginRight="40dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:background="@drawable/color"
-                        android:popupBackground="@drawable/scolor"
+                        android:background="@drawable/span_color"
+                        android:popupBackground="@drawable/span_color"
                         android:textAlignment="center" />
 
                     <Spinner
