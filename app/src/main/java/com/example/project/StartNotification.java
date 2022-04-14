@@ -30,8 +30,6 @@ public class StartNotification extends BroadcastReceiver {
     NotificationManagerCompat NMC;
     SharedPreferences.Editor editor;
     int Notification_id=0;
-    Intent resultIntent;
-    PendingIntent pendingIntent;
     // NotificationChannel show;
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -50,9 +48,6 @@ public class StartNotification extends BroadcastReceiver {
         builder = new NotificationCompat.Builder(context,channel_id);
         NMC=NotificationManagerCompat.from(context);
 
-        resultIntent=new Intent(context,MainActivity.class);
-        pendingIntent= PendingIntent.getActivity(context,1,resultIntent,PendingIntent.FLAG_UPDATE_CURRENT);
-
         CheckWebPage check=new CheckWebPage();
         check.execute();
     }
@@ -60,9 +55,7 @@ public class StartNotification extends BroadcastReceiver {
     {
         builder.setContentTitle(title)
                 .setContentText(text)
-                .setSmallIcon(R.drawable.science)
-                .setAutoCancel(true)
-                .setContentIntent(pendingIntent);
+                .setSmallIcon(R.drawable.science);
         ++Notification_id;
         NMC.notify(Notification_id,builder.build());
     }

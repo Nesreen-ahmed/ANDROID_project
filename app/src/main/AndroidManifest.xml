@@ -20,7 +20,6 @@
             </intent-filter>
         </activity>
         <receiver android:name=".StartNotification"
-            android:launchMode="singleTop"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
