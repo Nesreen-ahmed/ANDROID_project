@@ -794,7 +794,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         AlarmManager alarmManager= (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,0,1,pendingIntent);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,0,900000,pendingIntent);
 
         //finish();
     }
