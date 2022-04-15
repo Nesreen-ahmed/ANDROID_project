@@ -1,6 +1,6 @@
 package com.example.project;
 
-import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
@@ -88,6 +88,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
             show.setVisibility(View.INVISIBLE);
             v.setVisibility(View.VISIBLE);
             v.loadUrl("https://www.facebook.com/672109416181270/");
+            v.setWebViewClient(new WebViewClient());
+        }
+        else if(view.getId()==R.id.baneer)
+        {
+            show.setVisibility(View.INVISIBLE);
+            v.setVisibility(View.VISIBLE);
+            v.loadUrl("https://science.asu.edu.eg/ar/page/47/private-ads");
             v.setWebViewClient(new WebViewClient());
         }
         else if(view.getId()==R.id.adver)
@@ -781,7 +788,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         AlarmManager alarmManager= (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,0,10,pendingIntent);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,0,900000,pendingIntent);
 
         //finish();
     }
