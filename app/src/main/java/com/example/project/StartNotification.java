@@ -59,7 +59,7 @@ public class StartNotification extends BroadcastReceiver {
         builder.setContentTitle(title)
                 .setContentText(text)
                 .setSmallIcon(R.drawable.banner_icon)
-                .setLargeIcon(BitmapFactory.decodeResource(Resources.getSystem(),R.drawable.banner_icon))
+                .setLargeIcon(BitmapFactory.decodeResource(Resources.getSystem(), R.drawable.science))
                 .setContentIntent(pendingIntent).setAutoCancel(true)
                 .setAutoCancel(true);
         ++Notification_id;
