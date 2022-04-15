@@ -41,7 +41,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
         show=findViewById(R.id.gpashow);
         startNOTIFICATION();
     }
-
+    public void change(String x)
+    {
+        show.setVisibility(View.INVISIBLE);
+        v.setVisibility(View.VISIBLE);
+        v.loadUrl(x);
+        v.setWebViewClient(new WebViewClient());
+    }
     @Override
     public void onBackPressed() {
         if(show.getVisibility()==View.VISIBLE && v.canGoBack())
@@ -64,28 +70,28 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void changeview(View view){
         if(view.getId()==R.id.complain)
         {
-            show.setVisibility(View.GONE);
+            show.setVisibility(View.INVISIBLE);
             v.setVisibility(View.VISIBLE);
             v.loadUrl("https://forms.office.com/r/HfejjtfynN");
             v.setWebViewClient(new WebViewClient());
         }
         else if(view.getId()==R.id.events)
         {
-            show.setVisibility(View.GONE);
+            show.setVisibility(View.INVISIBLE);
             v.setVisibility(View.VISIBLE);
             v.loadUrl("https://science.asu.edu.eg/ar/events");
             v.setWebViewClient(new WebViewClient());
         }
         else if(view.getId()==R.id.news)
         {
-            show.setVisibility(View.GONE);
+            show.setVisibility(View.INVISIBLE);
             v.setVisibility(View.VISIBLE);
             v.loadUrl("https://science.asu.edu.eg/ar/news");
             v.setWebViewClient(new WebViewClient());
         }
         else if(view.getId()==R.id.facebook)
         {
-            show.setVisibility(View.GONE);
+            show.setVisibility(View.INVISIBLE);
             v.setVisibility(View.VISIBLE);
             v.loadUrl("https://www.facebook.com/672109416181270/");
             v.setWebViewClient(new WebViewClient());
@@ -99,7 +105,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
         else if(view.getId()==R.id.adver)
         {
-            show.setVisibility(View.GONE);
+            show.setVisibility(View.INVISIBLE);
             v.setVisibility(View.VISIBLE);
             v.loadUrl("https://science.asu.edu.eg/ar/announcements");
             v.setWebViewClient(new WebViewClient());
@@ -107,7 +113,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         else if(view.getId()==R.id.gpa)
         {
             show.setVisibility(View.VISIBLE);
-            v.setVisibility(View.GONE);
+            v.setVisibility(View.INVISIBLE);
             v.loadUrl("");
             grades();
             hours();
