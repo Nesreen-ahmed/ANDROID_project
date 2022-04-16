@@ -29,11 +29,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
     Button b;
     float total=0;
     float gpa=0,y=0;
-    double grades[]=new double[10];
-    int hours[]=new int[10],x=0;
+    double grades[]=new double[12];
+    int hours[]=new int[12],x=0;
     int tHours,ad=3;
-    Spinner hour1,hour2,hour3,hour4,hour5,hour6,hour7,hour8,hour9,hour10;
-    Spinner grade1,grade2,grade3,grade4,grade5,grade6,grade7,grade8,grade9,grade10;
+    Spinner hour1,hour2,hour3,hour4,hour5,hour6,hour7,hour8,hour9,hour10,hour11,hour12;
+    Spinner grade1,grade2,grade3,grade4,grade5,grade6,grade7,grade8,grade9,grade10,grade11,grade12;
     final DecimalFormat df = new DecimalFormat("0.0000");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +52,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         hour8=findViewById(R.id.b23);
         hour9=findViewById(R.id.b26);
         hour10=findViewById(R.id.b29);
+        hour11=findViewById(R.id.b31);
+        hour12=findViewById(R.id.b33);
         grade1=findViewById(R.id.b1);
         grade2=findViewById(R.id.b4);
         grade3=findViewById(R.id.b7);
@@ -62,6 +64,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         grade8=findViewById(R.id.b22);
         grade9=findViewById(R.id.b25);
         grade10=findViewById(R.id.b28);
+        grade11=findViewById(R.id.b30);
+        grade12=findViewById(R.id.b32);
     }
 
     @Override
@@ -359,6 +363,48 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 grades[9]=0;hours[9]=0;
             }
         });
+        hour11.setAdapter(adapter);
+        hour11.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i)
+                {
+                    case 0:hours[10]=0;break;
+                    case 1:hours[10]=1;break;
+                    case 2:hours[10]=2;break;
+                    case 3:hours[10]=3;break;
+                    case 4:hours[10]=4;break;
+                    case 5:hours[10]=5;break;
+                    case 6:hours[10]=6;break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                grades[10]=0;hours[10]=0;
+            }
+        });
+        hour12.setAdapter(adapter);
+        hour12.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i)
+                {
+                    case 0:hours[11]=0;break;
+                    case 1:hours[11]=1;break;
+                    case 2:hours[11]=2;break;
+                    case 3:hours[11]=3;break;
+                    case 4:hours[11]=4;break;
+                    case 5:hours[11]=5;break;
+                    case 6:hours[11]=6;break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                grades[11]=0;hours[11]=0;
+            }
+        });
     }
 
     private void grades() {
@@ -604,6 +650,52 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 grades[9]=0;hours[9]=0;
             }
         });
+        grade11.setAdapter(adapter);
+        grade11.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i)
+                {
+                    case 0:grades[10]=0.0;break;
+                    case 1:grades[10]=4.0;break;
+                    case 2:grades[10]=3.67;break;
+                    case 3:grades[10]=3.33;break;
+                    case 4:grades[10]=3.0;break;
+                    case 5:grades[10]=2.67;break;
+                    case 6:grades[10]=2.33;break;
+                    case 7:grades[10]=2.0;break;
+                    case 8:grades[10]=0.0;break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                grades[10]=0;hours[10]=0;
+            }
+        });
+        grade12.setAdapter(adapter);
+        grade12.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i)
+                {
+                    case 0:grades[11]=0.0;break;
+                    case 1:grades[11]=4.0;break;
+                    case 2:grades[11]=3.67;break;
+                    case 3:grades[11]=3.33;break;
+                    case 4:grades[11]=3.0;break;
+                    case 5:grades[11]=2.67;break;
+                    case 6:grades[11]=2.33;break;
+                    case 7:grades[11]=2.0;break;
+                    case 8:grades[11]=0.0;break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                grades[11]=0;hours[11]=0;
+            }
+        });
     }
 
     @Override
@@ -796,7 +888,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     public void add(View view) {
-        if(ad>=0&&ad<=9) {
+        if(ad>=0&&ad<=11) {
             ad++;
             switch (ad) {
                 case 1:
@@ -829,13 +921,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 case 10:
                     findViewById(R.id.v10).setVisibility(View.VISIBLE);
                     break;
+                case 11:
+                    findViewById(R.id.v11).setVisibility(View.VISIBLE);
+                    break;
+                case 12:
+                    findViewById(R.id.v12).setVisibility(View.VISIBLE);
+                    break;
             }
         }
         //else max item is 10
     }
 
     public void remove(View view) {
-        if(ad>=1&&ad<=10){
+        if(ad>=1&&ad<=12){
             switch (ad){
                 case 1:findViewById(R.id.v1).setVisibility(View.GONE);hour1.setSelection(0);grade1.setSelection(0);hours[0]=0;break;
                 case 2:findViewById(R.id.v2).setVisibility(View.GONE);hour2.setSelection(0);grade2.setSelection(0);hours[1]=0;break;
@@ -847,6 +945,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 case 8:findViewById(R.id.v8).setVisibility(View.GONE);hour8.setSelection(0);grade8.setSelection(0);hours[7]=0;break;
                 case 9:findViewById(R.id.v9).setVisibility(View.GONE);hour9.setSelection(0);grade9.setSelection(0);hours[8]=0;break;
                 case 10:findViewById(R.id.v10).setVisibility(View.GONE);hour10.setSelection(0);grade10.setSelection(0);hours[9]=0;break;
+                case 11:findViewById(R.id.v11).setVisibility(View.GONE);hour11.setSelection(0);grade11.setSelection(0);hours[10]=0;break;
+                case 12:findViewById(R.id.v12).setVisibility(View.GONE);hour12.setSelection(0);grade12.setSelection(0);hours[11]=0;break;
             }
             ad--;
         }

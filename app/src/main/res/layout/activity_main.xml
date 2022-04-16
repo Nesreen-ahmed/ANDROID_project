@@ -809,6 +809,96 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/v11"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="91dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:text="#11"
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/b30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="65dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/span_color"
+                        android:popupBackground="@drawable/span_color"
+                        android:textAlignment="center" />
+
+                    <Spinner
+                        android:id="@+id/b31"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/span_color"
+                        android:popupBackground="@drawable/span_color"
+                        android:textAlignment="center" />
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/v12"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="91dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:text="#12"
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/b32"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="65dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/span_color"
+                        android:popupBackground="@drawable/span_color"
+                        android:textAlignment="center" />
+
+                    <Spinner
+                        android:id="@+id/b33"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/span_color"
+                        android:popupBackground="@drawable/span_color"
+                        android:textAlignment="center" />
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="30dp"
                     android:orientation="horizontal">
