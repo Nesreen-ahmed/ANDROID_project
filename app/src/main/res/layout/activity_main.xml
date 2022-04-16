@@ -181,6 +181,32 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/baneer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/new_color"
+                android:gravity="center"
+                android:onClick="changeview"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="49dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/banner_icon" />
+
+                <TextView
+                    android:layout_width="129dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="الملحوظات الخاصة"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/complain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -236,32 +262,6 @@
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     android:layout_marginTop="-5dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/baneer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:background="@drawable/new_color"
-                android:onClick="changeview"
-                android:orientation="vertical"
-                android:padding="10dp"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="49dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:src="@drawable/banner_icon" />
-
-                <TextView
-                    android:layout_width="129dp"
-                    android:layout_height="wrap_content"
-                    android:text="الملحوظات الخاصة"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    android:gravity="center" />
             </LinearLayout>
 
         </LinearLayout>
@@ -390,7 +390,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/span_color"
-                        android:popupBackground="@drawable/scolor"
+                        android:popupBackground="@drawable/span_color"
                         android:textAlignment="center" />
 
                     <Spinner
@@ -402,7 +402,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/span_color"
-                        android:popupBackground="@drawable/scolor"
+                        android:popupBackground="@drawable/span_color"
                         android:textAlignment="center" />
 
 
@@ -433,7 +433,7 @@
                         android:layout_weight="1"
                         android:background="@drawable/span_color"
                         android:textAlignment="center"
-                        android:popupBackground="@drawable/scolor"/>
+                        android:popupBackground="@drawable/span_color"/>
 
                     <Spinner
                         android:id="@+id/b5"
@@ -445,7 +445,7 @@
                         android:layout_weight="1"
                         android:background="@drawable/span_color"
                         android:textAlignment="center"
-                        android:popupBackground="@drawable/scolor"/>
+                        android:popupBackground="@drawable/span_color"/>
 
 
                 </LinearLayout>
@@ -474,7 +474,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/span_color"
-                        android:popupBackground="@drawable/scolor"
+                        android:popupBackground="@drawable/span_color"
                         android:textAlignment="center"  />
 
                     <Spinner
@@ -486,7 +486,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/span_color"
-                        android:popupBackground="@drawable/scolor"
+                        android:popupBackground="@drawable/span_color"
                         android:textAlignment="center"  />
 
 
@@ -516,7 +516,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/span_color"
-                        android:popupBackground="@drawable/scolor"
+                        android:popupBackground="@drawable/span_color"
                         android:textAlignment="center" />
 
                     <Spinner
@@ -528,7 +528,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/span_color"
-                        android:popupBackground="@drawable/scolor"
+                        android:popupBackground="@drawable/span_color"
                         android:textAlignment="center" />
 
 
@@ -558,7 +558,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/span_color"
-                        android:popupBackground="@drawable/scolor"
+                        android:popupBackground="@drawable/span_color"
                         android:textAlignment="center" />
 
                     <Spinner
@@ -570,7 +570,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/span_color"
-                        android:popupBackground="@drawable/scolor"
+                        android:popupBackground="@drawable/span_color"
                         android:textAlignment="center" />
 
 
@@ -600,7 +600,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/span_color"
-                        android:popupBackground="@drawable/scolor"
+                        android:popupBackground="@drawable/span_color"
                         android:textAlignment="center" />
 
                     <Spinner
@@ -612,7 +612,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/span_color"
-                        android:popupBackground="@drawable/scolor"
+                        android:popupBackground="@drawable/span_color"
                         android:textAlignment="center" />
 
 
@@ -642,7 +642,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/span_color"
-                        android:popupBackground="@drawable/scolor"
+                        android:popupBackground="@drawable/span_color"
                         android:textAlignment="center" />
 
                     <Spinner
@@ -654,7 +654,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/span_color"
-                        android:popupBackground="@drawable/scolor"
+                        android:popupBackground="@drawable/span_color"
                         android:textAlignment="center" />
 
 
@@ -684,7 +684,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/span_color"
-                        android:popupBackground="@drawable/scolor"
+                        android:popupBackground="@drawable/span_color"
                         android:textAlignment="center" />
 
                     <Spinner
@@ -696,7 +696,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/span_color"
-                        android:popupBackground="@drawable/scolor"
+                        android:popupBackground="@drawable/span_color"
                         android:textAlignment="center" />
 
 
@@ -726,7 +726,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/span_color"
-                        android:popupBackground="@drawable/scolor"
+                        android:popupBackground="@drawable/span_color"
                         android:textAlignment="center" />
 
                     <Spinner
@@ -738,7 +738,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/span_color"
-                        android:popupBackground="@drawable/scolor"
+                        android:popupBackground="@drawable/span_color"
                         android:textAlignment="center" />
 
 
@@ -769,7 +769,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/span_color"
-                        android:popupBackground="@drawable/scolor"
+                        android:popupBackground="@drawable/span_color"
                         android:textAlignment="center" />
 
                     <Spinner
@@ -781,7 +781,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/span_color"
-                        android:popupBackground="@drawable/scolor"
+                        android:popupBackground="@drawable/span_color"
                         android:textAlignment="center" />
 
 

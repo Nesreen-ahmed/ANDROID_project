@@ -58,8 +58,7 @@ public class StartNotification extends BroadcastReceiver {
         NotificationManagerCompat NMC=NotificationManagerCompat.from(cxt);
         builder.setContentTitle(title)
                 .setContentText(text)
-                .setSmallIcon(R.drawable.banner_icon)
-                .setLargeIcon(BitmapFactory.decodeResource(Resources.getSystem(), R.drawable.science))
+                .setSmallIcon(R.drawable.science)
                 .setContentIntent(pendingIntent).setAutoCancel(true)
                 .setAutoCancel(true);
         ++Notification_id;

@@ -41,13 +41,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         show=findViewById(R.id.gpashow);
         startNOTIFICATION();
     }
-    public void change(String x)
-    {
-        show.setVisibility(View.INVISIBLE);
-        v.setVisibility(View.VISIBLE);
-        v.loadUrl(x);
-        v.setWebViewClient(new WebViewClient());
-    }
     @Override
     public void onBackPressed() {
         if(show.getVisibility()==View.VISIBLE && v.canGoBack())
@@ -93,7 +86,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         {
             show.setVisibility(View.INVISIBLE);
             v.setVisibility(View.VISIBLE);
-            v.loadUrl("https://www.facebook.com/672109416181270/");
+            v.loadUrl("https://www.facebook.com/FacultyofScienceASU/");
             v.setWebViewClient(new WebViewClient());
         }
         else if(view.getId()==R.id.baneer)
@@ -790,7 +783,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         Intent intent=new Intent(this,StartNotification.class);
         intent.setAction("com.example.notification.STARTNOTIFICATION");
-        PendingIntent pendingIntent= PendingIntent.getBroadcast(this,0,intent,PendingIntent.FLAG_MUTABLE);
+        PendingIntent pendingIntent= PendingIntent.getBroadcast(this,0,intent ,PendingIntent.FLAG_MUTABLE);
 
         AlarmManager alarmManager= (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
