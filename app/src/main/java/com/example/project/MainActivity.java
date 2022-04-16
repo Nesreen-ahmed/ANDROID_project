@@ -31,7 +31,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     float gpa=0,y=0;
     double grades[]=new double[10];
     int hours[]=new int[10],x=0;
-    int tHours;
+    int tHours,ad=3;
+    Spinner hour1,hour2,hour3,hour4,hour5,hour6,hour7,hour8,hour9,hour10;
+    Spinner grade1,grade2,grade3,grade4,grade5,grade6,grade7,grade8,grade9,grade10;
     final DecimalFormat df = new DecimalFormat("0.0000");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +42,28 @@ public class MainActivity extends Activity implements View.OnClickListener {
         v= findViewById(R.id.webview);
         show=findViewById(R.id.gpashow);
         startNOTIFICATION();
+        hour1=findViewById(R.id.b2);
+        hour2=findViewById(R.id.b5);
+        hour3=findViewById(R.id.b8);
+        hour4=findViewById(R.id.b11);
+        hour5=findViewById(R.id.b14);
+        hour6=findViewById(R.id.b17);
+        hour7=findViewById(R.id.b20);
+        hour8=findViewById(R.id.b23);
+        hour9=findViewById(R.id.b26);
+        hour10=findViewById(R.id.b29);
+        grade1=findViewById(R.id.b1);
+        grade2=findViewById(R.id.b4);
+        grade3=findViewById(R.id.b7);
+        grade4=findViewById(R.id.b10);
+        grade5=findViewById(R.id.b13);
+        grade6=findViewById(R.id.b16);
+        grade7=findViewById(R.id.b19);
+        grade8=findViewById(R.id.b22);
+        grade9=findViewById(R.id.b25);
+        grade10=findViewById(R.id.b28);
     }
+
     @Override
     public void onBackPressed() {
         if(show.getVisibility()==View.VISIBLE && v.canGoBack())
@@ -86,7 +109,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         {
             show.setVisibility(View.INVISIBLE);
             v.setVisibility(View.VISIBLE);
-            v.loadUrl("https://www.facebook.com/FacultyofScienceASU/");
+            v.loadUrl("https://www.facebook.com/672109416181270/");
             v.setWebViewClient(new WebViewClient());
         }
         else if(view.getId()==R.id.baneer)
@@ -116,16 +139,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     private void hours() {
-        Spinner hour1=findViewById(R.id.b2);
-        Spinner hour2=findViewById(R.id.b5);
-        Spinner hour3=findViewById(R.id.b8);
-        Spinner hour4=findViewById(R.id.b11);
-        Spinner hour5=findViewById(R.id.b14);
-        Spinner hour6=findViewById(R.id.b17);
-        Spinner hour7=findViewById(R.id.b20);
-        Spinner hour8=findViewById(R.id.b23);
-        Spinner hour9=findViewById(R.id.b26);
-        Spinner hour10=findViewById(R.id.b29);
         List<Integer> hoursarr=new ArrayList<Integer>();
         hoursarr.add(0);
         hoursarr.add(1);
@@ -349,16 +362,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     private void grades() {
-        Spinner grade1=findViewById(R.id.b1);
-        Spinner grade2=findViewById(R.id.b4);
-        Spinner grade3=findViewById(R.id.b7);
-        Spinner grade4=findViewById(R.id.b10);
-        Spinner grade5=findViewById(R.id.b13);
-        Spinner grade6=findViewById(R.id.b16);
-        Spinner grade7=findViewById(R.id.b19);
-        Spinner grade8=findViewById(R.id.b22);
-        Spinner grade9=findViewById(R.id.b25);
-        Spinner grade10=findViewById(R.id.b28);
         List <String> gradesarr=new ArrayList<String>();
         gradesarr.add("GR");
         gradesarr.add("A");
@@ -783,12 +786,70 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         Intent intent=new Intent(this,StartNotification.class);
         intent.setAction("com.example.notification.STARTNOTIFICATION");
-        PendingIntent pendingIntent= PendingIntent.getBroadcast(this,0,intent ,PendingIntent.FLAG_MUTABLE);
+        PendingIntent pendingIntent= PendingIntent.getBroadcast(this,0,intent,PendingIntent.FLAG_MUTABLE);
 
         AlarmManager alarmManager= (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,0,900000,pendingIntent);
 
         //finish();
+    }
+
+    public void add(View view) {
+        if(ad>=0&&ad<=9) {
+            ad++;
+            switch (ad) {
+                case 1:
+                    findViewById(R.id.v1).setVisibility(View.VISIBLE);
+                    break;
+                case 2:
+                    findViewById(R.id.v2).setVisibility(View.VISIBLE);
+                    break;
+                case 3:
+                    findViewById(R.id.v3).setVisibility(View.VISIBLE);
+                    break;
+                case 4:
+                    findViewById(R.id.v4).setVisibility(View.VISIBLE);
+                    break;
+                case 5:
+                    findViewById(R.id.v5).setVisibility(View.VISIBLE);
+                    break;
+                case 6:
+                    findViewById(R.id.v6).setVisibility(View.VISIBLE);
+                    break;
+                case 7:
+                    findViewById(R.id.v7).setVisibility(View.VISIBLE);
+                    break;
+                case 8:
+                    findViewById(R.id.v8).setVisibility(View.VISIBLE);
+                    break;
+                case 9:
+                    findViewById(R.id.v9).setVisibility(View.VISIBLE);
+                    break;
+                case 10:
+                    findViewById(R.id.v10).setVisibility(View.VISIBLE);
+                    break;
+            }
+        }
+        //else max item is 10
+    }
+
+    public void remove(View view) {
+        if(ad>=1&&ad<=10){
+            switch (ad){
+                case 1:findViewById(R.id.v1).setVisibility(View.GONE);hour1.setSelection(0);grade1.setSelection(0);hours[0]=0;break;
+                case 2:findViewById(R.id.v2).setVisibility(View.GONE);hour2.setSelection(0);grade2.setSelection(0);hours[1]=0;break;
+                case 3:findViewById(R.id.v3).setVisibility(View.GONE);hour3.setSelection(0);grade3.setSelection(0);hours[2]=0;break;
+                case 4:findViewById(R.id.v4).setVisibility(View.GONE);hour4.setSelection(0);grade4.setSelection(0);hours[3]=0;break;
+                case 5:findViewById(R.id.v5).setVisibility(View.GONE);hour5.setSelection(0);grade5.setSelection(0);hours[4]=0;break;
+                case 6:findViewById(R.id.v6).setVisibility(View.GONE);hour6.setSelection(0);grade6.setSelection(0);hours[5]=0;break;
+                case 7:findViewById(R.id.v7).setVisibility(View.GONE);hour7.setSelection(0);grade7.setSelection(0);hours[6]=0;break;
+                case 8:findViewById(R.id.v8).setVisibility(View.GONE);hour8.setSelection(0);grade8.setSelection(0);hours[7]=0;break;
+                case 9:findViewById(R.id.v9).setVisibility(View.GONE);hour9.setSelection(0);grade9.setSelection(0);hours[8]=0;break;
+                case 10:findViewById(R.id.v10).setVisibility(View.GONE);hour10.setSelection(0);grade10.setSelection(0);hours[9]=0;break;
+            }
+            ad--;
+        }
+        //else min item is 0
     }
 }
