@@ -457,7 +457,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:id="@+id/v3">
+                    android:id="@+id/v3"
+                    android:visibility="gone">
 
                     <TextView
                         android:id="@+id/textView3"
@@ -859,7 +860,7 @@
                     android:visibility="gone">
 
                     <TextView
-                        android:id="@+id/textView12"
+                        android:id="@+id/textView13"
                         android:layout_width="91dp"
                         android:layout_height="55dp"
                         android:layout_weight="0.25"

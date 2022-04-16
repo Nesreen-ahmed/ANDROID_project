@@ -31,7 +31,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     float gpa=0,y=0;
     double grades[]=new double[12];
     int hours[]=new int[12],x=0;
-    int tHours,ad=3;
+    int tHours,ad=2;
     Spinner hour1,hour2,hour3,hour4,hour5,hour6,hour7,hour8,hour9,hour10,hour11,hour12;
     Spinner grade1,grade2,grade3,grade4,grade5,grade6,grade7,grade8,grade9,grade10,grade11,grade12;
     final DecimalFormat df = new DecimalFormat("0.0000");
@@ -754,7 +754,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         TextView tv1=dialog.findViewById(R.id.tv1);
         tv1.setText("Your Semester is : "+df.format(gpa));
         TextView tv2=dialog.findViewById(R.id.tv2);
-        tv2.setText("Your Comutative is : "+df.format(total));
+        tv2.setText("Your Comulative is : "+df.format(total));
         im.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -780,7 +780,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         TextView tv1=dialog.findViewById(R.id.tv1);
         tv1.setText("Your Semester is : "+df.format(gpa));
         TextView tv2=dialog.findViewById(R.id.tv2);
-        tv2.setText("Your Comutative is : "+df.format(total));
+        tv2.setText("Your Comulative is : "+df.format(total));
         im.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -806,7 +806,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         TextView tv1=dialog.findViewById(R.id.tv1);
         tv1.setText("Your Semester is : "+df.format(gpa));
         TextView tv2=dialog.findViewById(R.id.tv2);
-        tv2.setText("Your Comutative is : "+df.format(total));
+        tv2.setText("Your Comulative is : "+df.format(total));
         im.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -832,7 +832,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         TextView tv1=dialog.findViewById(R.id.tv1);
         tv1.setText("Your Semester is : "+df.format(gpa));
         TextView tv2=dialog.findViewById(R.id.tv2);
-        tv2.setText("Your Comutative is : "+df.format(total));
+        tv2.setText("Your Comulative is : "+df.format(total));
         im.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -858,7 +858,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         TextView tv1=dialog.findViewById(R.id.tv1);
         tv1.setText("Your Semester is : "+df.format(gpa));
         TextView tv2=dialog.findViewById(R.id.tv2);
-        tv2.setText("Your Comutative is : "+df.format(total));
+        tv2.setText("Your Comulative is : "+df.format(total));
         im.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -929,14 +929,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     break;
             }
         }
-        //else max item is 10
+        else Toast.makeText(getApplicationContext(),"Max Number is 12 ",Toast.LENGTH_SHORT).show();
     }
 
     public void remove(View view) {
-        if(ad>=1&&ad<=12){
+        if(ad>=3&&ad<=12){
             switch (ad){
-                case 1:findViewById(R.id.v1).setVisibility(View.GONE);hour1.setSelection(0);grade1.setSelection(0);hours[0]=0;break;
-                case 2:findViewById(R.id.v2).setVisibility(View.GONE);hour2.setSelection(0);grade2.setSelection(0);hours[1]=0;break;
                 case 3:findViewById(R.id.v3).setVisibility(View.GONE);hour3.setSelection(0);grade3.setSelection(0);hours[2]=0;break;
                 case 4:findViewById(R.id.v4).setVisibility(View.GONE);hour4.setSelection(0);grade4.setSelection(0);hours[3]=0;break;
                 case 5:findViewById(R.id.v5).setVisibility(View.GONE);hour5.setSelection(0);grade5.setSelection(0);hours[4]=0;break;
@@ -950,6 +948,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
             }
             ad--;
         }
-        //else min item is 0
+        else Toast.makeText(getApplicationContext(),"Minimum Number is 2 ",Toast.LENGTH_SHORT).show();
     }
 }
