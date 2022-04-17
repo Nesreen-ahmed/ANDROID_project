@@ -198,7 +198,7 @@
                     android:src="@drawable/banner_icon" />
 
                 <TextView
-                    android:layout_width="129dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="الملحوظات الخاصة"
@@ -226,7 +226,7 @@
                     android:src="@drawable/complain_icon" />
 
                 <TextView
-                    android:layout_width="116dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="الشكاوي/الاقتراحات"
@@ -349,7 +349,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="  أن تكون الكلية رائدة في العلوم الأساسية وتطبيقاتها_تدريساً وبحثاُ علمياُ_ علي المستوى الوطني والاقليمي، وأن تقدم للمجتمع خريجاً متميزاً يلم بمفاتيح النجاح ويكون منافساُ في المحافل المحلية والدولية  "
+                            android:text="  أن تكون الكلية رائدة في العلوم الأساسية وتطبيقاتها_تدريساً وبحثاُ علمياُ_ على المستوى الوطني والاقليمي، وأن تقدم للمجتمع خريجاً متميزاً يلم بمفاتيح النجاح ويكون منافساُ في المحافل المحلية والدولية  "
                             android:textSize="15dp"
                             android:layout_marginTop="5dp"
                             android:textColor="@color/black"
@@ -383,7 +383,7 @@
                             android:textStyle="bold"
                             android:layout_marginTop="5dp"
                             android:textColor="@color/black"
-                            android:layout_marginBottom="15dp"
+                            android:layout_marginBottom="10dp"
                             />
                         <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
@@ -391,8 +391,9 @@
                             app:cardCornerRadius="20dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
                             android:id="@+id/student"
-                            android:layout_marginBottom="10dp">
+                            android:onClick="changeview">
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
@@ -421,7 +422,8 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="10dp"
-                            android:id="@+id/prof">
+                            android:id="@+id/prof"
+                            android:onClick="changeview">
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
@@ -453,7 +455,8 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="10dp"
-                            android:id="@+id/gradstudent">
+                            android:id="@+id/gradstudent"
+                            android:onClick="changeview">
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
@@ -470,6 +473,126 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="40dp"
                                     android:text="الدراسات العليا "
+                                    android:textSize="30dp"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/black"
+                                    />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="30dp"
+                    android:layout_marginBottom="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="الخدمات "
+                            android:background="@drawable/bgcolor2"
+                            android:textSize="40dp"
+                            android:layout_gravity="right"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            />
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:cardCornerRadius="30dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:id="@+id/learn"
+                                android:onClick="changeview">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:background="@drawable/bgcolor2">
+                                    <ImageView
+                                        android:layout_width="120dp"
+                                        android:layout_height="120dp"
+                                        android:src="@drawable/learn"
+                                        android:layout_gravity="center"
+                                        />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="40dp"
+                                        android:text="منصة التعلم الالكتروني "
+                                        android:textSize="30dp"
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:layout_gravity="center"
+                                        android:textColor="@color/black"
+                                        />
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:cardCornerRadius="30dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:id="@+id/graduated"
+                            android:onClick="changeview">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:background="@drawable/bgcolor2">
+                                <ImageView
+                                    android:layout_width="120dp"
+                                    android:layout_height="120dp"
+                                    android:src="@drawable/graduated"
+                                    android:layout_gravity="center"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:text="خدمات الخريجين "
+                                    android:textSize="30dp"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/black"
+                                    />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:cardCornerRadius="30dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:id="@+id/magazine"
+                            android:onClick="changeview">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:background="@drawable/bgcolor2">
+                                <ImageView
+                                    android:layout_width="120dp"
+                                    android:layout_height="120dp"
+                                    android:src="@drawable/magazine"
+                                    android:layout_gravity="center"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:text="المجلات العلمية"
                                     android:textSize="30dp"
                                     android:gravity="center"
                                     android:textStyle="bold"
@@ -572,7 +695,7 @@
                         android:layout_marginRight="8dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Credits Hourse"
+                        android:text="Credit Hours"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 

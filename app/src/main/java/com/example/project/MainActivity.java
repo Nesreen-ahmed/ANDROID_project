@@ -22,116 +22,148 @@ import android.widget.*;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     WebView v;
-    ScrollView show,home;
-    EditText prevhours,prevgpas;
+    ScrollView show, home;
+    EditText prevhours, prevgpas;
     Button b;
-    float total=0;
-    float gpa=0,y=0;
-    double grades[]=new double[12];
-    int hours[]=new int[12],x=0;
-    int tHours,ad=2;
-    Spinner hour1,hour2,hour3,hour4,hour5,hour6,hour7,hour8,hour9,hour10,hour11,hour12;
-    Spinner grade1,grade2,grade3,grade4,grade5,grade6,grade7,grade8,grade9,grade10,grade11,grade12;
+    float total = 0;
+    float gpa = 0, y = 0;
+    double grades[] = new double[12];
+    int hours[] = new int[12], x = 0;
+    int tHours, ad = 2;
+    Spinner hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11, hour12;
+    Spinner grade1, grade2, grade3, grade4, grade5, grade6, grade7, grade8, grade9, grade10, grade11, grade12;
     final DecimalFormat df = new DecimalFormat("0.0000");
-    boolean flag=true;
+     int cnt = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        v= findViewById(R.id.webview);
-        show=findViewById(R.id.gpashow);
-        home=findViewById(R.id.home);
+        v = findViewById(R.id.webview);
+        show = findViewById(R.id.gpashow);
+        home = findViewById(R.id.home);
         startNOTIFICATION();
-        hour1=findViewById(R.id.b2);
-        hour2=findViewById(R.id.b5);
-        hour3=findViewById(R.id.b8);
-        hour4=findViewById(R.id.b11);
-        hour5=findViewById(R.id.b14);
-        hour6=findViewById(R.id.b17);
-        hour7=findViewById(R.id.b20);
-        hour8=findViewById(R.id.b23);
-        hour9=findViewById(R.id.b26);
-        hour10=findViewById(R.id.b29);
-        hour11=findViewById(R.id.b31);
-        hour12=findViewById(R.id.b33);
-        grade1=findViewById(R.id.b1);
-        grade2=findViewById(R.id.b4);
-        grade3=findViewById(R.id.b7);
-        grade4=findViewById(R.id.b10);
-        grade5=findViewById(R.id.b13);
-        grade6=findViewById(R.id.b16);
-        grade7=findViewById(R.id.b19);
-        grade8=findViewById(R.id.b22);
-        grade9=findViewById(R.id.b25);
-        grade10=findViewById(R.id.b28);
-        grade11=findViewById(R.id.b30);
-        grade12=findViewById(R.id.b32);
+        hour1 = findViewById(R.id.b2);
+        hour2 = findViewById(R.id.b5);
+        hour3 = findViewById(R.id.b8);
+        hour4 = findViewById(R.id.b11);
+        hour5 = findViewById(R.id.b14);
+        hour6 = findViewById(R.id.b17);
+        hour7 = findViewById(R.id.b20);
+        hour8 = findViewById(R.id.b23);
+        hour9 = findViewById(R.id.b26);
+        hour10 = findViewById(R.id.b29);
+        hour11 = findViewById(R.id.b31);
+        hour12 = findViewById(R.id.b33);
+        grade1 = findViewById(R.id.b1);
+        grade2 = findViewById(R.id.b4);
+        grade3 = findViewById(R.id.b7);
+        grade4 = findViewById(R.id.b10);
+        grade5 = findViewById(R.id.b13);
+        grade6 = findViewById(R.id.b16);
+        grade7 = findViewById(R.id.b19);
+        grade8 = findViewById(R.id.b22);
+        grade9 = findViewById(R.id.b25);
+        grade10 = findViewById(R.id.b28);
+        grade11 = findViewById(R.id.b30);
+        grade12 = findViewById(R.id.b32);
     }
 
     @Override
     public void onBackPressed() {
-        if(show.getVisibility()==View.VISIBLE && v.canGoBack())
+        if(cnt==1)
         {
-            v.setVisibility(View.VISIBLE);
-            v.goBack();
-            show.setVisibility(View.GONE);
-        }
-        else if(v.canGoBack()){
-            v.goBack();
-            if(v.getOriginalUrl().equals(""))
+            if(v.getVisibility()==View.VISIBLE)
             {
-                show.setVisibility(View.VISIBLE);
+                v.loadUrl("https://blank.org/?msclkid=1efe451fbe1411ec971af83a402422f0");
+                v.setVisibility(View.INVISIBLE);
+                home.setVisibility(View.VISIBLE);
+                cnt--;
+            }
+            else if(show.getVisibility()==View.VISIBLE )
+            {
+                show.setVisibility(View.GONE);
+                home.setVisibility(View.VISIBLE);
+                cnt--;
+            }
+        }
+        else if(cnt>1)
+        {
+            if(show.getVisibility()==View.VISIBLE && v.canGoBack())
+            {
+                v.setVisibility(View.VISIBLE);
+                v.goBack();
+                show.setVisibility(View.GONE);
+                cnt--;
+            }
+            else if(v.canGoBack()){
+                v.goBack();
+                if(v.getOriginalUrl().equals(""))
+                {
+                    v.setVisibility(View.INVISIBLE);
+                    show.setVisibility(View.VISIBLE);
+                }
+                else if(v.getOriginalUrl().equals("\"https://blank.org/?msclkid=1efe451fbe1411ec971af83a402422f0\""))
+                {
+                    v.setVisibility(View.INVISIBLE);
+                    home.setVisibility(View.VISIBLE);
+                }
+                cnt--;
             }
         }
         else {
-            if (flag == true) {
-                v.setVisibility(View.GONE);
-                flag = false;
-            } else super.onBackPressed();
+            super.onBackPressed();
         }
+
     }
 
     public void changeview(View view){
         if(view.getId()==R.id.complain)
         {
             show.setVisibility(View.INVISIBLE);
-            v.setVisibility(View.VISIBLE);
+            cnt++;
             v.loadUrl("https://forms.office.com/r/HfejjtfynN");
+            v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
         }
         else if(view.getId()==R.id.events)
         {
             show.setVisibility(View.INVISIBLE);
-            v.setVisibility(View.VISIBLE);
+            cnt++;
             v.loadUrl("https://science.asu.edu.eg/ar/events");
+            v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
         }
         else if(view.getId()==R.id.news)
         {
             show.setVisibility(View.INVISIBLE);
-            v.setVisibility(View.VISIBLE);
+            cnt++;
             v.loadUrl("https://science.asu.edu.eg/ar/news");
+            v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
         }
         else if(view.getId()==R.id.facebook)
         {
             show.setVisibility(View.INVISIBLE);
-            v.setVisibility(View.VISIBLE);
+            cnt++;
             v.loadUrl("https://www.facebook.com/672109416181270/");
+            v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
         }
         else if(view.getId()==R.id.baneer)
         {
             show.setVisibility(View.INVISIBLE);
-            v.setVisibility(View.VISIBLE);
+            cnt++;
             v.loadUrl("https://science.asu.edu.eg/ar/page/47/private-ads");
+            v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
         }
         else if(view.getId()==R.id.adver)
         {
             show.setVisibility(View.INVISIBLE);
-            v.setVisibility(View.VISIBLE);
+            cnt++;
             v.loadUrl("https://science.asu.edu.eg/ar/announcements");
+            v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
         }
         else if(view.getId()==R.id.gpa)
@@ -143,7 +175,57 @@ public class MainActivity extends Activity implements View.OnClickListener {
             hours();
             b=findViewById(R.id.calculate);
             b.setOnClickListener(this);
+            cnt++;
         }
+        else if(view.getId()==R.id.student)
+        {
+            home.setVisibility(View.GONE);
+            v.loadUrl("https://ums.asu.edu.eg/");
+            v.setVisibility(View.VISIBLE);
+            v.setWebViewClient(new WebViewClient());
+            cnt++;
+        }
+        else if(view.getId()==R.id.prof)
+        {
+            home.setVisibility(View.GONE);
+            v.loadUrl("https://staff.asu.edu.eg/en/login");
+            v.setVisibility(View.VISIBLE);
+            v.setWebViewClient(new WebViewClient());
+            cnt++;
+        }
+        else if(view.getId()==R.id.gradstudent)
+        {
+            home.setVisibility(View.GONE);
+            v.loadUrl("https://ums.asu.edu.eg/PGApplicationRegister");
+            v.setVisibility(View.VISIBLE);
+            v.setWebViewClient(new WebViewClient());
+            cnt++;
+        }
+        else if(view.getId()==R.id.learn)
+        {
+            home.setVisibility(View.GONE);
+            v.loadUrl("https://asu2learn.asu.edu.eg/science/");
+            v.setVisibility(View.VISIBLE);
+            v.setWebViewClient(new WebViewClient());
+            cnt++;
+        }
+        else if(view.getId()==R.id.graduated)
+        {
+            home.setVisibility(View.GONE);
+            v.loadUrl("https://www.asu.edu.eg/ar/339/page");
+            v.setVisibility(View.VISIBLE);
+            v.setWebViewClient(new WebViewClient());
+            cnt++;
+        }
+        else if(view.getId()==R.id.magazine)
+        {
+            home.setVisibility(View.GONE);
+            v.loadUrl("https://science.asu.edu.eg/ar/page/46");
+            v.setVisibility(View.VISIBLE);
+            v.setWebViewClient(new WebViewClient());
+            cnt++;
+        }
+
     }
 
     private void hours() {
@@ -758,7 +840,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         TextView tv1=dialog.findViewById(R.id.tv1);
         tv1.setText("Your Semester is : "+df.format(gpa));
         TextView tv2=dialog.findViewById(R.id.tv2);
-        tv2.setText("Your Comulative is : "+df.format(total));
+        tv2.setText("Your Cumulative is : "+df.format(total));
         im.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -784,7 +866,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         TextView tv1=dialog.findViewById(R.id.tv1);
         tv1.setText("Your Semester is : "+df.format(gpa));
         TextView tv2=dialog.findViewById(R.id.tv2);
-        tv2.setText("Your Comulative is : "+df.format(total));
+        tv2.setText("Your Cumulative is : "+df.format(total));
         im.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -810,7 +892,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         TextView tv1=dialog.findViewById(R.id.tv1);
         tv1.setText("Your Semester is : "+df.format(gpa));
         TextView tv2=dialog.findViewById(R.id.tv2);
-        tv2.setText("Your Comulative is : "+df.format(total));
+        tv2.setText("Your Cumulative is : "+df.format(total));
         im.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -836,7 +918,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         TextView tv1=dialog.findViewById(R.id.tv1);
         tv1.setText("Your Semester is : "+df.format(gpa));
         TextView tv2=dialog.findViewById(R.id.tv2);
-        tv2.setText("Your Comulative is : "+df.format(total));
+        tv2.setText("Your Cumulative is : "+df.format(total));
         im.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -862,7 +944,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         TextView tv1=dialog.findViewById(R.id.tv1);
         tv1.setText("Your Semester is : "+df.format(gpa));
         TextView tv2=dialog.findViewById(R.id.tv2);
-        tv2.setText("Your Comulative is : "+df.format(total));
+        tv2.setText("Your Cumulative is : "+df.format(total));
         im.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
