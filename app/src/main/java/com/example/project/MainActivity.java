@@ -33,6 +33,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     Spinner hour1,hour2,hour3,hour4,hour5,hour6,hour7,hour8,hour9,hour10,hour11,hour12;
     Spinner grade1,grade2,grade3,grade4,grade5,grade6,grade7,grade8,grade9,grade10,grade11,grade12;
     final DecimalFormat df = new DecimalFormat("0.0000");
+    boolean flag=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,8 +83,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 show.setVisibility(View.VISIBLE);
             }
         }
-        else
-            super.onBackPressed();
+        else {
+            if (flag == true) {
+                v.setVisibility(View.GONE);
+                flag = false;
+            } else super.onBackPressed();
+        }
     }
 
     public void changeview(View view){
