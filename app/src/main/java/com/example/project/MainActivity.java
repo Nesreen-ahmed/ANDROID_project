@@ -1,6 +1,5 @@
 package com.example.project;
 
-
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
@@ -21,10 +20,9 @@ import java.util.List;
 import android.webkit.WebView;
 import android.widget.*;
 
-
 public class MainActivity extends Activity implements View.OnClickListener {
     WebView v;
-    ScrollView show;
+    ScrollView show,home;
     EditText prevhours,prevgpas;
     Button b;
     float total=0;
@@ -41,6 +39,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_main);
         v= findViewById(R.id.webview);
         show=findViewById(R.id.gpashow);
+        home=findViewById(R.id.home);
         startNOTIFICATION();
         hour1=findViewById(R.id.b2);
         hour2=findViewById(R.id.b5);
