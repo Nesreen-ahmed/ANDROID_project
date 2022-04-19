@@ -72,6 +72,27 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onBackPressed() {
+        if(show.getVisibility()==View.VISIBLE && v.canGoBack())
+        {
+            v.goBack();
+            show.setVisibility(View.GONE);
+            v.setVisibility(View.VISIBLE);
+
+        }
+        else if(v.getVisibility()==View.VISIBLE&&v.canGoBack()){
+            v.goBack();
+            if(v.getOriginalUrl().equals(""))
+            {
+                show.setVisibility(View.VISIBLE);
+            }
+        }
+        else if(v.getVisibility()==View.VISIBLE||show.getVisibility()==View.VISIBLE){
+                v.setVisibility(View.GONE);
+                show.setVisibility(View.GONE);
+            }
+        else super.onBackPressed();
+    }
+    /*public void onBackPressed() {
         if(f2==true){v.setVisibility(View.GONE);f2=false;}
         if(show.getVisibility()==View.VISIBLE && v.canGoBack())
         {
@@ -95,7 +116,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
             } else super.onBackPressed();
         }
-    }
+    }*/
     /*public void onBackPressed() {
         if(cnt==1)
         {
@@ -206,7 +227,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
         else if(view.getId()==R.id.student)
         {
-            home.setVisibility(View.GONE);
+            //home.setVisibility(View.GONE);
             v.loadUrl("https://ums.asu.edu.eg/");
             v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
@@ -214,7 +235,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
         else if(view.getId()==R.id.prof)
         {
-            home.setVisibility(View.GONE);
+            //home.setVisibility(View.GONE);
             v.loadUrl("https://staff.asu.edu.eg/en/login");
             v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
@@ -222,7 +243,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
         else if(view.getId()==R.id.gradstudent)
         {
-            home.setVisibility(View.GONE);
+            //home.setVisibility(View.GONE);
             v.loadUrl("https://ums.asu.edu.eg/PGApplicationRegister");
             v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
@@ -230,7 +251,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
         else if(view.getId()==R.id.learn)
         {
-            home.setVisibility(View.GONE);
+            //home.setVisibility(View.GONE);
             v.loadUrl("https://asu2learn.asu.edu.eg/science/");
             v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
@@ -238,7 +259,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
         else if(view.getId()==R.id.graduated)
         {
-            home.setVisibility(View.GONE);
+            //home.setVisibility(View.GONE);
             v.loadUrl("https://www.asu.edu.eg/ar/339/page");
             v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
@@ -246,7 +267,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
         else if(view.getId()==R.id.magazine)
         {
-            home.setVisibility(View.GONE);
+            //home.setVisibility(View.GONE);
             v.loadUrl("https://science.asu.edu.eg/ar/page/46");
             v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
