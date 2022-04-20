@@ -34,7 +34,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     Spinner grade1, grade2, grade3, grade4, grade5, grade6, grade7, grade8, grade9, grade10, grade11, grade12;
     final DecimalFormat df = new DecimalFormat("0.0000");
      int cnt = 0;
-     boolean flag=true,f2=false;
+     boolean flag=false,f2=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -165,7 +165,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }*/
 
     public void changeview(View view){
-        flag = true;
         if(view.getId()==R.id.complain)
         {
             show.setVisibility(View.INVISIBLE);
