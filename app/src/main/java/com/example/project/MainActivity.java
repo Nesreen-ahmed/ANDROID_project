@@ -33,14 +33,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
     Spinner hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11, hour12;
     Spinner grade1, grade2, grade3, grade4, grade5, grade6, grade7, grade8, grade9, grade10, grade11, grade12;
     final DecimalFormat df = new DecimalFormat("0.0000");
-     int cnt = 0;
-     boolean flag=false,f2=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         v = findViewById(R.id.webview);
+        v.loadUrl("about:blank");
         show = findViewById(R.id.gpashow);
         home = findViewById(R.id.home);
         startNOTIFICATION();
@@ -77,6 +76,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
             v.goBack();
             show.setVisibility(View.GONE);
             v.setVisibility(View.VISIBLE);
+            if(v.getOriginalUrl().equals("about:blank")){
+                v.goBack();
+                v.setVisibility(View.GONE);
+                show.setVisibility(View.GONE);
+            }
 
         }
         else if(v.getVisibility()==View.VISIBLE&&v.canGoBack()){
@@ -84,6 +88,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
             if(v.getOriginalUrl().equals(""))
             {
                 show.setVisibility(View.VISIBLE);
+            }
+            else if(v.getOriginalUrl().equals("about:blank")){
+                v.goBack();
+                v.setVisibility(View.GONE);
+                show.setVisibility(View.GONE);
             }
         }
         else if(v.getVisibility()==View.VISIBLE||show.getVisibility()==View.VISIBLE){
@@ -168,7 +177,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         if(view.getId()==R.id.complain)
         {
             show.setVisibility(View.INVISIBLE);
-            cnt++;
             v.loadUrl("https://forms.office.com/r/HfejjtfynN");
             v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
@@ -176,7 +184,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         else if(view.getId()==R.id.events)
         {
             show.setVisibility(View.INVISIBLE);
-            cnt++;
             v.loadUrl("https://science.asu.edu.eg/ar/events");
             v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
@@ -184,7 +191,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         else if(view.getId()==R.id.news)
         {
             show.setVisibility(View.INVISIBLE);
-            cnt++;
             v.loadUrl("https://science.asu.edu.eg/ar/news");
             v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
@@ -192,7 +198,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         else if(view.getId()==R.id.facebook)
         {
             show.setVisibility(View.INVISIBLE);
-            cnt++;
             v.loadUrl("https://www.facebook.com/672109416181270/");
             v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
@@ -200,7 +205,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         else if(view.getId()==R.id.baneer)
         {
             show.setVisibility(View.INVISIBLE);
-            cnt++;
             v.loadUrl("https://science.asu.edu.eg/ar/page/47/private-ads");
             v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
@@ -208,7 +212,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         else if(view.getId()==R.id.adver)
         {
             show.setVisibility(View.INVISIBLE);
-            cnt++;
             v.loadUrl("https://science.asu.edu.eg/ar/announcements");
             v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
@@ -222,7 +225,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
             hours();
             b=findViewById(R.id.calculate);
             b.setOnClickListener(this);
-            cnt++;
         }
         else if(view.getId()==R.id.student)
         {
@@ -230,7 +232,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
             v.loadUrl("https://ums.asu.edu.eg/");
             v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
-            cnt++;
         }
         else if(view.getId()==R.id.prof)
         {
@@ -238,7 +239,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
             v.loadUrl("https://staff.asu.edu.eg/en/login");
             v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
-            cnt++;
         }
         else if(view.getId()==R.id.gradstudent)
         {
@@ -246,7 +246,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
             v.loadUrl("https://ums.asu.edu.eg/PGApplicationRegister");
             v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
-            cnt++;
         }
         else if(view.getId()==R.id.learn)
         {
@@ -254,7 +253,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
             v.loadUrl("https://asu2learn.asu.edu.eg/science/");
             v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
-            cnt++;
         }
         else if(view.getId()==R.id.graduated)
         {
@@ -262,7 +260,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
             v.loadUrl("https://www.asu.edu.eg/ar/339/page");
             v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
-            cnt++;
         }
         else if(view.getId()==R.id.magazine)
         {
@@ -270,7 +267,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
             v.loadUrl("https://science.asu.edu.eg/ar/page/46");
             v.setVisibility(View.VISIBLE);
             v.setWebViewClient(new WebViewClient());
-            cnt++;
         }
 
     }
